@@ -1,6 +1,6 @@
 body {
   background-color: whitesmoke;
-  font-family: "Helvetica Neue", Arial;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
   margin: 0;
   padding: 0;
 }
@@ -48,13 +48,14 @@ body {
   padding-left: 40px;
 }
 
-.PersonDetails h2, h3 {
+.PersonDetails h2 {
+  font-size: 2.1em;
   margin: 0;
+  padding-bottom: 4px;
 }
 
-.PersonDetails h2 {
-  font-size: 1.96em;
-  padding-bottom: 4px;
+.PersonDetails h3 {
+  margin: 0;
 }
 
 .Contact {
@@ -83,7 +84,7 @@ body {
   padding-top: 6px;
 }
 
-.ContactDetails a, p {
+.ContactDetails a, .ContactDetails p {
   color: white;
   margin: 0;
   text-decoration: none;
@@ -94,9 +95,23 @@ body {
 }
 
 .Summary {
-  background-color: lightsalmon;
+  color: #212529;
   height: 16%;
   width: 90%;
+}
+
+.Summary > h4 {
+  margin: 0;
+  padding: 30px 0 10px 0;
+}
+
+.Summary > hr {
+  margin-bottom: 15px;
+}
+
+.Summary > p {
+  font-size: 0.9em;
+  text-align: justify;
 }
 
 .Experience {
