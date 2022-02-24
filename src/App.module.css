@@ -18,11 +18,18 @@ body {
 
 .CVContent {
   align-items: center;
-  background-color: lightgoldenrodyellow;
+  background-color: white;
   display: flex;
   flex-direction: column;
   height: 100%;
   width: 100%;
+}
+
+hr {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 1px solid rgba(0,0,0,.1);
 }
 
 .Header {
@@ -102,11 +109,7 @@ body {
 
 .Summary > h4 {
   margin: 0;
-  padding: 30px 0 10px 0;
-}
-
-.Summary > hr {
-  margin-bottom: 15px;
+  padding-top: 30px;
 }
 
 .Summary > p {
@@ -118,6 +121,37 @@ body {
   background-color: lightgreen;
   height: 64%;
   width: 90%;
+}
+
+.Jobs {
+  align-items: center;
+  background-color: lightgray;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.Job {
+  background-color: lightcyan;
+  display: flex;
+  flex-direction: row;
+  font-size: 0.9em;
+  justify-content: center;
+  width: 96%;
+}
+
+.JobDetails {
+  background-color: azure;
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+}
+
+.JobTechStack {
+  background-color: beige;
+  display: flex;
+  flex-direction: column;
+  width: 30%;
 }
 
 .Info {

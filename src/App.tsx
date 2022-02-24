@@ -86,17 +86,44 @@ const Summary = (): JSX.Element => {
 const Experience = (): JSX.Element => {
   return (
     <section className={styles.Experience}>
-      Experience
-      <Job />
+      <h4>Experience</h4>
+      <hr />
+      <Jobs />
     </section>
+  )
+}
+
+const Jobs = (): JSX.Element => {
+  return (
+    <div className={styles.Jobs}>
+      <Job />
+      <Job />
+      <Job />
+    </div>
   )
 }
 
 const Job = (): JSX.Element => {
   return (
-    <>
-      Job
-    </>
+    <div className={styles.Job}>
+      <div className={styles.JobDetails}>
+        <span>Role, company</span>
+        <span>Tenure</span>
+        <span>Context info</span>
+        <ul>
+          <li>..</li>
+          <li>..</li>
+          <li>..</li>
+          <li>..</li>
+          <li>..</li>
+          <li>..</li>
+          <li>..</li>
+        </ul>
+      </div>
+      <div className={styles.JobTechStack}>
+        Tech stack
+      </div>
+    </div>
   )
 }
 
