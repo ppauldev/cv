@@ -1,5 +1,6 @@
 body {
   background-color: whitesmoke;
+  font-family: "Helvetica Neue", Arial;
   margin: 0;
   padding: 0;
 }
@@ -10,24 +11,86 @@ body {
   justify-content: center;
 }
 
-.cvWrapper {
+.CVWrapper {
   height: 29.6cm;
   width: 21cm;
 }
 
-.cvContent {
+.CVContent {
+  align-items: center;
   background-color: lightgoldenrodyellow;
   display: flex;
   flex-direction: column;
-  align-items: center;
   height: 100%;
   width: 100%;
 }
 
 .Header {
-  background-color: aliceblue;
-  height: 12%;
+  background-color: #6c757d;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 10%;
   width: 100%;
+}
+
+.Person {
+  align-items: flex-start;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  width: 50%;
+}
+
+.PersonDetails {
+  padding-left: 40px;
+}
+
+.PersonDetails h2, h3 {
+  margin: 0;
+}
+
+.PersonDetails h2 {
+  font-size: 1.96em;
+  padding-bottom: 4px;
+}
+
+.Contact {
+  align-items: flex-end;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  width: 50%;
+}
+
+.ContactDetails {
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  padding-right: 40px;
+}
+
+.ContactDetails > span {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  padding-top: 6px;
+}
+
+.ContactDetails a, p {
+  color: white;
+  margin: 0;
+  text-decoration: none;
+}
+
+.ContactDetails svg {
+  padding-left: 16px;
 }
 
 .Summary {
@@ -38,7 +101,7 @@ body {
 
 .Experience {
   background-color: lightgreen;
-  height: 62%;
+  height: 64%;
   width: 90%;
 }
 
