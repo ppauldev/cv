@@ -11,7 +11,12 @@ body {
 }
 
 .cvWrapper {
-  background-color: white;
   height: 29.6cm;
   width: 21cm;
+}
+
+.cvContent {
+  background-color: lightgoldenrodyellow;
+  height: 100%;
+  width: 100%;
 }
