@@ -15,41 +15,33 @@ const CVContent = (): JSX.Element => {
     <div className={styles.cvContent}>
       <Header />
       <Summary />
-      <Body />
+      <Experience />
+      <Info />
     </div>
   )
 }
 const Header = (): JSX.Element => {
   return (
-    <>
+    <div className={styles.Header}>
       Header info
-    </>
+    </div>
   )
 }
 
 const Summary = (): JSX.Element => {
   return (
-    <>
+    <div className={styles.Summary}>
       Summary
-    </>
-  )
-}
-
-const Body = (): JSX.Element => {
-  return (
-    <>
-      <Experience />
-      <Info />
-    </>
+    </div>
   )
 }
 
 const Experience = (): JSX.Element => {
   return (
-    <>
+    <div className={styles.Experience}>
       Experience
       <Job />
-    </>
+    </div>
   )
 }
 
@@ -63,35 +55,35 @@ const Job = (): JSX.Element => {
 
 const Info = (): JSX.Element => {
   return (
-    <>
+    <div className={styles.Info}>
       <Education />
       <Awards />
       <Languages />
-    </>
+    </div>
   )
 }
 
 const Education = (): JSX.Element => {
   return (
-    <>
+    <div className={styles.Education}>
       Education
-    </>
+    </div>
   )
 }
 
 const Awards = (): JSX.Element => {
   return (
-    <>
+    <div className={styles.Awards}>
       Awards
-    </>
+    </div>
   )
 }
 
 const Languages = (): JSX.Element => {
   return (
-    <>
+    <div className={styles.Languages}>
       Languages
-    </>
+    </div>
   )
 }
 
