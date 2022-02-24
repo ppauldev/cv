@@ -180,3 +180,12 @@ hr {
   height: 100%;
   width: 20%;
 }
+
+.bold {
+  font-weight: bold;
+}
+
+.light {
+  color: grey;
+  font-weight: 300;
+}

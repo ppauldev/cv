@@ -107,8 +107,8 @@ const Job = (): JSX.Element => {
   return (
     <div className={styles.Job}>
       <div className={styles.JobDetails}>
-        <span>Role, company</span>
-        <span>Tenure</span>
+        <span className={styles.bold}>Software Engineer, ZkSystems GmbH</span>
+        <span className={styles.light}>4/2021 - now</span>
         <span>Context info</span>
         <ul>
           <li>..</li>
