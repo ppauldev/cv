@@ -1,4 +1,17 @@
+body {
+  background-color: whitesmoke;
+  margin: 0;
+  padding: 0;
+}
+
 .App {
-  color: red;
-  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.cvWrapper {
+  background-color: white;
+  height: 29.6cm;
+  width: 21cm;
 }
