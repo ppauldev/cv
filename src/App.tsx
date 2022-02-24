@@ -48,6 +48,15 @@ const Experience = (): JSX.Element => {
   return (
     <>
       Experience
+      <Job />
+    </>
+  )
+}
+
+const Job = (): JSX.Element => {
+  return (
+    <>
+      Job
     </>
   )
 }
