@@ -1,13 +1,15 @@
 import * as React from "react";
 import { AppContext } from "./helper/context"
 import { LoadingSpinner, LinkedInIcon, MailIcon, PhoneIcon } from "./icons/Icons"
-import * as jobdata from "./jobdata.json"
+import * as jobdataJSON from "./jobdata.json"
 import styles from "./App.module.css";
 
 const App = (): JSX.Element => {
   const [cvData, setCvData] = React.useState({})
 
   React.useEffect(() => {
+    const jobdata = jobdataJSON // Load data, here via JSON
+
     setCvData((initial) => (
       {
         ...initial,
@@ -16,11 +18,15 @@ const App = (): JSX.Element => {
     )
   }, [])
 
+  const isEmpty = (data: object) => {
+    return Object.keys(data).length === 0 && data.constructor === Object;
+  }
+
   return (
     <AppContext.Provider value={cvData}>
       <div className={styles.App}>
         <div className={styles.CVWrapper}>
-          <CVContent />
+          {!isEmpty(cvData) ? <CVContent /> : <LoadingSpinner />}
         </div>
       </div>
     </AppContext.Provider>
