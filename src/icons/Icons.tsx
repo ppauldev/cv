@@ -68,7 +68,7 @@ export const PhoneIcon = (): JSX.Element => {
 
 export const LoadingSpinner = (): JSX.Element => {
   return (
-    <div className={styles["lds-ring"]}>
+    <div className={styles.spinner}>
       <div></div>
       <div></div>
       <div></div>
