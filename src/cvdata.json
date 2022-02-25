@@ -104,6 +104,19 @@
       }
     ]
   },
+  "languagesdata": {
+    "label": "languagesdata",
+    "data": [
+      {
+        "language": "German",
+        "level": "native"
+      },
+      {
+        "language": "English",
+        "level": "C1"
+      }
+    ]
+  },
   "persondata": {
     "label": "persondata",
     "data": {

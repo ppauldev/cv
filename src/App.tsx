@@ -15,6 +15,7 @@ const App = (): JSX.Element => {
         ...initial,
         educationData: data.educationdata,
         jobsData: data.jobsdata,
+        languagesData: data.languagesdata,
         personData: data.persondata,
         summaryData: data.summarydata,
       })
@@ -187,14 +188,8 @@ const Education = (): JSX.Element | null => {
 
   if (!("data" in educationData)) return null
 
-  const schools = educationData.data.map((school: any) => {
-    return (
-      <div className={styles.SchoolDetails}>
-        <span className={styles.bold}>{school.degree}</span>
-        <span>{school.name}</span>
-        <span>{school.duration}</span>
-      </div>
-    )
+  const schools = educationData.data.map((schoolData: any): JSX.Element => {
+    return <School data={schoolData} />
   })
 
   return (
@@ -206,12 +201,40 @@ const Education = (): JSX.Element | null => {
   )
 }
 
-const Languages = (): JSX.Element => {
+const School = ({ data }: any): JSX.Element => {
+  return (
+    <div className={styles.SchoolDetails}>
+      <span className={styles.bold}>{data.degree}</span>
+      <span>{data.name}</span>
+      <span>{data.duration}</span>
+    </div>
+  )
+}
+
+const Languages = (): JSX.Element | null => {
+  const { languagesData }: any = React.useContext(AppContext)
+
+  if (!("data" in languagesData)) return null
+
+  const languages = languagesData.data.map((languageData: any) => {
+    return <Language data={languageData} />
+  })
+
   return (
     <section className={styles.Languages}>
       <h5>Languages</h5>
       <hr />
+      <div className={styles.LanguagesDetails}>{languages}</div>
     </section>
+  )
+}
+
+const Language = ({ data }: any): JSX.Element => {
+  return (
+    <div className={styles.LanguageDetails}>
+      <span className={styles.bold}>{data.language}</span>
+      <span>{data.level}</span>
+    </div>
   )
 }
 

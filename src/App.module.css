@@ -196,7 +196,7 @@ hr {
 .Schools {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: flex-start;
 }
 
 .SchoolDetails {
@@ -212,7 +212,6 @@ hr {
 }
 
 .Languages {
-  background-color: aliceblue;
   height: 100%;
   width: 30%;
 }
@@ -221,6 +220,24 @@ hr {
   font-size: 1em;
   margin: 0;
   padding: 0;
+}
+
+.LanguagesDetails {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.LanguagesDetails span {
+  font-size: 0.7em;
+  padding: 4px;
+}
+
+.LanguageDetails {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 44%;
 }
 
 .bold {
