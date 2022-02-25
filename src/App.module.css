@@ -148,6 +148,13 @@ hr {
   width: 70%;
 }
 
+.JobDetailsFullWidth {
+  background-color: azure;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
 .JobTechStack {
   background-color: beige;
   display: flex;

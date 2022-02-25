@@ -1,0 +1,104 @@
+{
+  "jobsdata": {
+    "label": "jobsdata",
+    "data": [
+      {
+        "title": "Software Engineer, ZkSystems GmbH",
+        "tenure": "4/2021 - now",
+        "description": "Some context",
+        "tasks": [
+          {
+            "description": ".."
+          },
+          {
+            "description": ".."
+          },
+          {
+            "description": ".."
+          },
+          {
+            "description": ".."
+          },
+          {
+            "description": ".."
+          },
+          {
+            "description": ".."
+          }
+        ],
+        "techstack": [
+          "React",
+          "Next JS",
+          "Node.js",
+          "JavaScript (ES6+)",
+          "TypeScript",
+          "Python",
+          "Django",
+          "PostgreSQL",
+          "AWS"
+        ]
+      },
+      {
+        "title": "Web Developer, auteon GmbH",
+        "tenure": "7/2020 - 3/2021",
+        "description": "Some context",
+        "tasks": [
+          {
+            "description": ".."
+          },
+          {
+            "description": ".."
+          },
+          {
+            "description": ".."
+          },
+          {
+            "description": ".."
+          }
+        ],
+        "techstack": [
+          "Vue",
+          "Node.js",
+          "JavaScript (ES6+)",
+          "TypeScript",
+          "GraphQL",
+          "Hasura",
+          "PostgreSQL"
+        ]
+      },
+      {
+        "title": "Technical Account Manager, Hilti AG",
+        "tenure": "11/2017 - 1/2020",
+        "description": "Some context",
+        "tasks": [
+          {
+            "description": ".."
+          },
+          {
+            "description": ".."
+          },
+          {
+            "description": ".."
+          }
+        ]
+      }
+    ]
+  },
+  "persondata": {
+    "label": "persondata",
+    "data": {
+      "fullname": "Phillip Paul",
+      "role": "Software Developer",
+      "email": "phillip.paul@t-online.de",
+      "emailsubject": "Hi Phillip!",
+      "phone": "+49 176 3177 8623",
+      "linkedin": "linkedin.com/in/phillippaul"
+    }
+  },
+  "summarydata": {
+    "label": "summarydata",
+    "data": {
+      "summary": "Full stack software developer with an engineering background who relies on a passion for learning, acute attention to detail and effective communication to deliver exceptional results. My mission is to help purposeful tech companies realize their vision of the future by working pragmatically, thoroughly and business-oriented."
+    }
+  }
+}

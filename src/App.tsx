@@ -1,19 +1,21 @@
 import * as React from "react";
 import { AppContext } from "./helper/context"
 import { LoadingSpinner, LinkedInIcon, MailIcon, PhoneIcon } from "./icons/Icons"
-import * as jobdataJSON from "./jobdata.json"
+import * as cvdataJSON from "./cvdata.json"
 import styles from "./App.module.css";
 
 const App = (): JSX.Element => {
   const [cvData, setCvData] = React.useState({})
 
   React.useEffect(() => {
-    const jobdata = jobdataJSON // Load data, here via JSON
+    const data = cvdataJSON // Load data, here via JSON
 
     setCvData((initial) => (
       {
         ...initial,
-        jobdata: jobdata
+        jobsData: data.jobsdata,
+        personData: data.persondata,
+        summaryData: data.summarydata,
       })
     )
   }, [])
@@ -53,34 +55,42 @@ const Header = (): JSX.Element => {
   )
 }
 
-const Person = (): JSX.Element => {
+const Person = (): JSX.Element | null => {
+  const { personData }: any = React.useContext(AppContext)
+
+  if (!("data" in personData)) return null
+
   return (
     <div className={styles.Person}>
       <div className={styles.PersonDetails}>
-        <h2>Phillip Paul</h2>
-        <h3>Software Developer</h3>
+        <h2>{personData.data.fullname}</h2>
+        <h3>{personData.data.role}</h3>
       </div>
     </div>
   )
 }
 
-const Contact = (): JSX.Element => {
+const Contact = (): JSX.Element | null => {
+  const { personData }: any = React.useContext(AppContext)
+
+  if (!("data" in personData)) return null
+
   return (
     <div className={styles.Contact}>
       <div className={styles.ContactDetails}>
         <span>
-          <a href="mailto:phillip.paul@t-online.de?subject=Hi Phillip!">
-            phillip.paul@t-online.de
+          <a href={`mailto:${personData.data.email}?subject=${personData.data.emailsubject}`}>
+            {personData.data.email}
           </a>
           <MailIcon />
         </span>
         <span>
-          <p>+49 176 3177 8623</p>
+          <p>{personData.data.phone}</p>
           <PhoneIcon />
         </span>
         <span>
-          <a href="https://www.linkedin.com/in/phillippaul">
-            linkedin.com/in/phillippaul
+          <a href={`https://www.${personData.data.linkedin}`}>
+            {personData.data.linkedin}
           </a>
           <LinkedInIcon />
         </span>
@@ -89,18 +99,16 @@ const Contact = (): JSX.Element => {
   )
 }
 
-const Summary = (): JSX.Element => {
+const Summary = (): JSX.Element | null => {
+  const { summaryData }: any = React.useContext(AppContext)
+
+  if (!("data" in summaryData)) return null
+
   return (
     <section className={styles.Summary}>
       <h4>Profile Summary</h4>
       <hr />
-      <p>
-        Full stack software developer with an engineering background
-        who relies on a passion for learning, acute attention to
-        detail and effective communication to deliver exceptional results.
-        My mission is to help purposeful tech companies realize their
-        vision of the future by working pragmatically, thoroughly and business-oriented.
-      </p>
+      <p>{summaryData.data.summary}</p>
     </section>
   )
 }
@@ -116,35 +124,40 @@ const Experience = (): JSX.Element => {
 }
 
 const Jobs = (): JSX.Element | null => {
-  const { jobdata }: any = React.useContext(AppContext)
+  const { jobsData }: any = React.useContext(AppContext)
 
-  if (!("data" in jobdata)) return null
+  if (!("data" in jobsData)) return null
 
   return (
     <div className={styles.Jobs}>
-      {jobdata.data.map((job: any) => <Job data={job} />)}
+      {jobsData.data.map((jobData: any) => <Job data={jobData} />)}
     </div>
   )
 }
 
 const Job = ({ data }: any): JSX.Element => {
+  const hasTechStack = "techstack" in data
+  const classJobDetails = hasTechStack ? styles.JobDetails : styles.JobDetailsFullWidth
+
+  const tasks = data.tasks.map((task: any): JSX.Element => {
+    return (
+      <li>{task.description}</li>
+    )
+  })
+
   return (
     <div className={styles.Job}>
-      <div className={styles.JobDetails}>
+      <div className={classJobDetails}>
         <span className={styles.bold}>{data.title}</span>
         <span className={styles.light}>{data.tenure}</span>
         <span>{data.description}</span>
-        <ul>
-          {data.tasks.map((task: any) => {
-            return (
-              <li>{task.description}</li>
-            )
-          })}
-        </ul>
+        <ul>{tasks}</ul>
       </div>
-      <div className={styles.JobTechStack}>
-        Tech stack
-      </div>
+      {hasTechStack && (
+        <div className={styles.JobTechStack}>
+          Tech stack
+        </div>
+      )}
     </div>
   )
 }
