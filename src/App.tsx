@@ -13,6 +13,7 @@ const App = (): JSX.Element => {
     setCvData((initial) => (
       {
         ...initial,
+        educationData: data.educationdata,
         jobsData: data.jobsdata,
         personData: data.persondata,
         summaryData: data.summarydata,
@@ -176,33 +177,41 @@ const Info = (): JSX.Element => {
   return (
     <section className={styles.Info}>
       <Education />
-      <Awards />
       <Languages />
     </section>
   )
 }
 
-const Education = (): JSX.Element => {
-  return (
-    <div className={styles.Education}>
-      Education
-    </div>
-  )
-}
+const Education = (): JSX.Element | null => {
+  const { educationData }: any = React.useContext(AppContext)
 
-const Awards = (): JSX.Element => {
+  if (!("data" in educationData)) return null
+
+  const schools = educationData.data.map((school: any) => {
+    return (
+      <div className={styles.SchoolDetails}>
+        <span className={styles.bold}>{school.degree}</span>
+        <span>{school.name}</span>
+        <span>{school.duration}</span>
+      </div>
+    )
+  })
+
   return (
-    <div className={styles.Awards}>
-      Awards
-    </div>
+    <section className={styles.Education}>
+      <h5>Education</h5>
+      <hr />
+      <div className={styles.Schools}>{schools}</div>
+    </section>
   )
 }
 
 const Languages = (): JSX.Element => {
   return (
-    <div className={styles.Languages}>
-      Languages
-    </div>
+    <section className={styles.Languages}>
+      <h5>Languages</h5>
+      <hr />
+    </section>
   )
 }
 

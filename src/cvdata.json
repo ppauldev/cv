@@ -1,4 +1,24 @@
 {
+  "educationdata": {
+    "label": "educationdata",
+    "data": [
+      {
+        "degree": "Web Development Bootcamp",
+        "name": "Ironhack",
+        "duration": "2020"
+      },
+      {
+        "degree": "MSc in Material Science",
+        "name": "University Jena",
+        "duration": "2014 - 2017"
+      },
+      {
+        "degree": "BEng in Industrial Engineering",
+        "name": "University of Applied Sciences Trier",
+        "duration": "2009 - 2013"
+      }
+    ]
+  },
   "jobsdata": {
     "label": "jobsdata",
     "data": [
