@@ -133,7 +133,7 @@ hr {
 .Job {
   display: flex;
   flex-direction: row;
-  font-size: 0.9em;
+  font-size: 0.8em;
   justify-content: center;
   width: 96%;
 }
@@ -145,7 +145,6 @@ hr {
 }
 
 .JobDetailsFullWidth {
-  background-color: azure;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -155,7 +154,8 @@ hr {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding-bottom: 20px;
+  margin-left: 16px;
+  padding-bottom: 40px;
   width: 30%;
 }
 

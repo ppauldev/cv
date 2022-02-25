@@ -59,21 +59,21 @@
         ]
       },
       {
-        "title": "Web Developer, auteon GmbH",
+        "title": "Web Developer, auteon GmbH (Startup, PoC phase)",
         "tenure": "7/2020 - 3/2021",
-        "description": "Some context",
+        "description": "Responsible for planning and developing auteons article comparison mechanism via browser automation and supplier APIs.",
         "tasks": [
           {
-            "description": ".."
+            "description": "Planning, development and integration of software components and APIs in agile product development on strategic and operative level"
           },
           {
-            "description": ".."
+            "description": "Testing, maintaining and optimizing existing software components to increase robustness, correctness and speed for core product"
           },
           {
-            "description": ".."
+            "description": "Coordination, support and code review for 3 working students within the automation team"
           },
           {
-            "description": ".."
+            "description": "Migration of monolithic legacy code to modular automation core with Clean Code approach"
           }
         ],
         "techstack": [
@@ -95,7 +95,7 @@
             "description": "Build, care and develop customer relations in accordance to company targets and cost efficient resourcing"
           },
           {
-            "description": "Product presentation, delivering technical workshops and consulting customers with Hilti's systematic sales approach"
+            "description": "Product presentation, delivering technical workshops and consulting customers with company's systematic sales approach"
           },
           {
             "description": "Qualitative and quantitive market research in cooperation with leadership team and technical task force to address market opportunity"
