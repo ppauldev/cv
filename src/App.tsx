@@ -1,13 +1,29 @@
-import { LinkedInIcon, MailIcon, PhoneIcon } from "./icons/Icons"
+import * as React from "react";
+import { AppContext } from "./helper/context"
+import { LoadingSpinner, LinkedInIcon, MailIcon, PhoneIcon } from "./icons/Icons"
+import * as jobdata from "./jobdata.json"
 import styles from "./App.module.css";
 
 const App = (): JSX.Element => {
+  const [cvData, setCvData] = React.useState({})
+
+  React.useEffect(() => {
+    setCvData((initial) => (
+      {
+        ...initial,
+        jobdata: jobdata
+      })
+    )
+  }, [])
+
   return (
-    <div className={styles.App}>
-      <div className={styles.CVWrapper}>
-        <CVContent />
+    <AppContext.Provider value={cvData}>
+      <div className={styles.App}>
+        <div className={styles.CVWrapper}>
+          <CVContent />
+        </div>
       </div>
-    </div>
+    </AppContext.Provider>
   );
 }
 
@@ -93,31 +109,31 @@ const Experience = (): JSX.Element => {
   )
 }
 
-const Jobs = (): JSX.Element => {
+const Jobs = (): JSX.Element | null => {
+  const { jobdata }: any = React.useContext(AppContext)
+
+  if (!("data" in jobdata)) return null
+
   return (
     <div className={styles.Jobs}>
-      <Job />
-      <Job />
-      <Job />
+      {jobdata.data.map((job: any) => <Job data={job} />)}
     </div>
   )
 }
 
-const Job = (): JSX.Element => {
+const Job = ({ data }: any): JSX.Element => {
   return (
     <div className={styles.Job}>
       <div className={styles.JobDetails}>
-        <span className={styles.bold}>Software Engineer, ZkSystems GmbH</span>
-        <span className={styles.light}>4/2021 - now</span>
-        <span>Context info</span>
+        <span className={styles.bold}>{data.title}</span>
+        <span className={styles.light}>{data.tenure}</span>
+        <span>{data.description}</span>
         <ul>
-          <li>..</li>
-          <li>..</li>
-          <li>..</li>
-          <li>..</li>
-          <li>..</li>
-          <li>..</li>
-          <li>..</li>
+          {data.tasks.map((task: any) => {
+            return (
+              <li>{task.description}</li>
+            )
+          })}
         </ul>
       </div>
       <div className={styles.JobTechStack}>

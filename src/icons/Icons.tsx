@@ -1,3 +1,5 @@
+import styles from "../App.module.css";
+
 export const LinkedInIcon = (): JSX.Element => {
   return (
     <svg
@@ -61,5 +63,16 @@ export const PhoneIcon = (): JSX.Element => {
         clip-rule="evenodd"
       />
     </svg>
+  )
+}
+
+export const LoadingSpinner = (): JSX.Element => {
+  return (
+    <div className={styles["lds-ring"]}>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
   )
 }

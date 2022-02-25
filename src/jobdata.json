@@ -1,0 +1,65 @@
+{
+  "label": "jobdata",
+  "data": [
+    {
+      "title": "Software Engineer, ZkSystems GmbH",
+      "tenure": "4/2021 - now",
+      "description": "Some context",
+      "tasks": [
+        {
+          "description": ".."
+        },
+        {
+          "description": ".."
+        },
+        {
+          "description": ".."
+        },
+        {
+          "description": ".."
+        },
+        {
+          "description": ".."
+        },
+        {
+          "description": ".."
+        }
+      ]
+    },
+    {
+      "title": "Web Developer, auteon GmbH",
+      "tenure": "7/2020 - 3/2021",
+      "description": "Some context",
+      "tasks": [
+        {
+          "description": ".."
+        },
+        {
+          "description": ".."
+        },
+        {
+          "description": ".."
+        },
+        {
+          "description": ".."
+        }
+      ]
+    },
+    {
+      "title": "Technical Account Manager, Hilti AG",
+      "tenure": "11/2017 - 1/2020",
+      "description": "Some context",
+      "tasks": [
+        {
+          "description": ".."
+        },
+        {
+          "description": ".."
+        },
+        {
+          "description": ".."
+        }
+      ]
+    }
+  ]
+}
