@@ -92,13 +92,16 @@
         "description": "Some context",
         "tasks": [
           {
-            "description": ".."
+            "description": "Build, care and develop customer relations in accordance to company targets and cost efficient resourcing"
           },
           {
-            "description": ".."
+            "description": "Product presentation, delivering technical workshops and consulting customers with Hilti's systematic sales approach"
           },
           {
-            "description": ".."
+            "description": "Qualitative and quantitive market research in cooperation with leadership team and technical task force to address market opportunity"
+          },
+          {
+            "description": "Admission to Hilti's Top Club Germany by the general management for exceeding strategic company targets for 2 years based on customer loyalty, revenue growth and execution of companys long-term growth initiatives"
           }
         ]
       }
