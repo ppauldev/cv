@@ -236,7 +236,7 @@ export const Languages = (): JSX.Element | null => {
   })
 
   return (
-    <section className={styles.Languages}>
+    <section className={styles.Languages} data-testid="languages-section">
       <h5>Languages</h5>
       <hr />
       <div className={styles.LanguagesDetails} data-testid="languages-details">{languages}</div>

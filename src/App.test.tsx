@@ -69,3 +69,29 @@ describe("Success cases - component: 'Languages'", () => {
     expect(div.childNodes.length).toBe(testLanguagesData.languagesData.data.length)
   })
 })
+
+describe("Fail cases - component: 'Languages'", () => {
+  it("should return null for empty data", () => {
+    const testLanguagesData = { languagesData: null }
+    const { container } = render(
+      <AppContext.Provider value={testLanguagesData}>
+        <Languages />
+      </AppContext.Provider>
+    )
+    const div = container.querySelector("div[data-testid='languages-details']")
+
+    expect(div).toBe(null)
+  })
+
+  it("should return null for missing 'data' property", () => {
+    const testLanguagesData = { languagesData: {} }
+    const { container } = render(
+      <AppContext.Provider value={testLanguagesData}>
+        <Languages />
+      </AppContext.Provider>
+    )
+    const div = container.querySelector("div[data-testid='languages-details']")
+
+    expect(div).toBe(null)
+  })
+})
