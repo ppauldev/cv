@@ -67,3 +67,5 @@ export type TCVData = {
   personData: TPersonData,
   summaryData: TSummaryData
 }
+
+export type TCVDataInitial = {}

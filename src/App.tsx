@@ -6,7 +6,7 @@ import styles from "./App.module.css"
 import * as Types from "./App.types"
 
 const App = (): JSX.Element => {
-  const [cvData, setCvData] = React.useState<Types.TCVData | {}>({})
+  const [cvData, setCvData] = React.useState<Types.TCVData | Types.TCVDataInitial>({})
 
   React.useEffect(() => {
     const data: Types.TCVData = cvdataJSON // Load data, here via JSON
