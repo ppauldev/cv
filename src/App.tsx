@@ -38,7 +38,7 @@ const App = (): JSX.Element => {
   );
 }
 
-const CVContent = (): JSX.Element => {
+export const CVContent = (): JSX.Element => {
   return (
     <div className={styles.CVContent}>
       <Header />
@@ -49,7 +49,7 @@ const CVContent = (): JSX.Element => {
   )
 }
 
-const Header = (): JSX.Element => {
+export const Header = (): JSX.Element => {
   return (
     <section className={styles.Header}>
       <Person />
@@ -58,7 +58,7 @@ const Header = (): JSX.Element => {
   )
 }
 
-const Person = (): JSX.Element | null => {
+export const Person = (): JSX.Element | null => {
   const { personData } = React.useContext<Types.TCVData | { personData?: Types.TPersonData }>(AppContext)
 
   if (!personData || !("data" in personData)) return null
@@ -73,7 +73,7 @@ const Person = (): JSX.Element | null => {
   )
 }
 
-const Contact = (): JSX.Element | null => {
+export const Contact = (): JSX.Element | null => {
   const { personData } = React.useContext<Types.TCVData | { personData?: Types.TPersonData }>(AppContext)
 
   if (!personData || !("data" in personData)) return null
@@ -108,7 +108,7 @@ const Contact = (): JSX.Element | null => {
   )
 }
 
-const Summary = (): JSX.Element | null => {
+export const Summary = (): JSX.Element | null => {
   const { summaryData } = React.useContext<Types.TCVData | { summaryData?: Types.TSummaryData }>(AppContext)
 
   if (!summaryData || !("data" in summaryData)) return null
@@ -122,7 +122,7 @@ const Summary = (): JSX.Element | null => {
   )
 }
 
-const Experience = (): JSX.Element => {
+export const Experience = (): JSX.Element => {
   return (
     <section className={styles.Experience}>
       <h4>Experience</h4>
@@ -132,7 +132,7 @@ const Experience = (): JSX.Element => {
   )
 }
 
-const Jobs = (): JSX.Element | null => {
+export const Jobs = (): JSX.Element | null => {
   const { jobsData } = React.useContext<Types.TCVData | { jobsData?: Types.TJobsData }>(AppContext)
 
   if (!jobsData || !("data" in jobsData)) return null
@@ -146,7 +146,7 @@ const Jobs = (): JSX.Element | null => {
   )
 }
 
-const Job = ({ data }: { data: Types.TJob }): JSX.Element => {
+export const Job = ({ data }: { data: Types.TJob }): JSX.Element => {
   const classJobDetails: string = data?.techstack ? styles.JobDetails : styles.JobDetailsFullWidth
 
   const tasks: JSX.Element[] = data.tasks.map((task: Types.TJobTask, index: number): JSX.Element => {
@@ -168,7 +168,7 @@ const Job = ({ data }: { data: Types.TJob }): JSX.Element => {
   )
 }
 
-const TechStack = ({ stack }: { stack: string[] | undefined }): JSX.Element | null => {
+export const TechStack = ({ stack }: { stack: string[] | undefined }): JSX.Element | null => {
   if (!stack || stack.length === 0) return null
 
   const stackItems: JSX.Element[] = stack.map((item: string, index: number) => {
@@ -198,7 +198,7 @@ const Info = (): JSX.Element => {
   )
 }
 
-const Education = (): JSX.Element | null => {
+export const Education = (): JSX.Element | null => {
   const { educationData } = React.useContext<Types.TCVData | { educationData?: Types.TEducationData }>(AppContext)
 
   if (!educationData || !("data" in educationData)) return null
@@ -216,7 +216,7 @@ const Education = (): JSX.Element | null => {
   )
 }
 
-const School = ({ data }: { data: Types.TSchool }): JSX.Element => {
+export const School = ({ data }: { data: Types.TSchool }): JSX.Element => {
   return (
     <div className={styles.SchoolDetails}>
       <span className={styles.bold}>{data.degree}</span>
@@ -226,7 +226,7 @@ const School = ({ data }: { data: Types.TSchool }): JSX.Element => {
   )
 }
 
-const Languages = (): JSX.Element | null => {
+export const Languages = (): JSX.Element | null => {
   const { languagesData } = React.useContext<Types.TCVData | { languagesData?: Types.TLanguagesData }>(AppContext)
 
   if (!languagesData || !("data" in languagesData)) return null
@@ -239,12 +239,12 @@ const Languages = (): JSX.Element | null => {
     <section className={styles.Languages}>
       <h5>Languages</h5>
       <hr />
-      <div className={styles.LanguagesDetails}>{languages}</div>
+      <div className={styles.LanguagesDetails} data-testid="languages-details">{languages}</div>
     </section>
   )
 }
 
-const Language = ({ data }: { data: Types.TLanguage }): JSX.Element => {
+export const Language = ({ data }: { data: Types.TLanguage }): JSX.Element => {
   return (
     <div className={styles.LanguageDetails}>
       <span className={styles.bold}>{data.language}</span>
