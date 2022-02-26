@@ -39,7 +39,7 @@ describe("Component: 'Languages'", () => {
     expect(hr).toBeDefined()
   })
 
-  it("should have applied a styling to div", () => {
+  it("should have applied styling to elements", () => {
     const testLanguagesData = { languagesData: cvdataJSON.languagesData }
     render(
       <AppContext.Provider value={testLanguagesData}>
@@ -47,8 +47,10 @@ describe("Component: 'Languages'", () => {
       </AppContext.Provider>
     )
 
+    const section = screen.getByTestId("languages-section")
     const div = screen.getByTestId("languages-details")
 
+    expect(section.className).toBe(styles.Languages)
     expect(div.className).toBe(styles.LanguagesDetails)
   })
 
