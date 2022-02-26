@@ -168,8 +168,12 @@ const TechStack = ({ stack }: any): JSX.Element => {
   })
   return (
     <div className={styles.JobTechStack}>
-      <p>Tech Stack:</p>
-      <div>{stackItems}</div>
+      <p>Tech Stack</p>
+      <div className={styles.StackItems}>
+        <div>
+          {stackItems}
+        </div>
+      </div>
     </div>
   )
 }

@@ -135,7 +135,7 @@ hr {
   flex-direction: row;
   font-size: 0.7em;
   justify-content: center;
-  margin-bottom: 14px;
+  margin-bottom: 10px;
   width: 96%;
 }
 
@@ -152,11 +152,10 @@ hr {
 }
 
 .JobTechStack {
+  align-items: flex-start;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  margin-left: 16px;
-  padding-bottom: 40px;
+  margin-left: 50px;
   width: 30%;
 }
 
@@ -165,12 +164,20 @@ hr {
   margin: 0;
 }
 
+.StackItems {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  height: 86%;
+}
+
 .StackItem {
   background-color: #6c757d;
   border-radius: 4px;
   color: white;
   display: inline-block;
-  font-size: 0.8em;
+  font-size: 0.9em;
   margin: 2px;
   padding: 5px;
 }
