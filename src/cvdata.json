@@ -23,33 +23,34 @@
     "label": "jobsdata",
     "data": [
       {
-        "title": "Software Engineer, ZkSystems GmbH",
+        "title": "Software Engineer, ZkSystems GmbH (Startup, seed phase)",
         "tenure": "4/2021 - now",
-        "description": "Some context",
+        "description": "Responsible for planning and developing the automation core and app for the ZeroWork.io launch",
         "tasks": [
           {
-            "description": ".."
+            "description": "Planning, development and integration of software components and APIs in agile product development on strategic and operative level for backend and frontend"
           },
           {
-            "description": ".."
+            "description": "Evaluation and validation of product feature roadmap for automation core"
           },
           {
-            "description": ".."
+            "description": "Integration of Stripe payments system in backend, app and marketplace utilizing REST API and Webhooks"
           },
           {
-            "description": ".."
+            "description": "Integration of queue management system for workflow execution in backend and app utilizing AWS SQS, Redis and Bull QM"
           },
           {
-            "description": ".."
+            "description": "Built automation core from scratch to drive No-Code building logic of app in Python"
           },
           {
-            "description": ".."
+            "description": "Migration of Python code base to TypeScript to account for future demand on performance, scalability and maintainability"
           }
         ],
         "techstack": [
           "React",
           "Next JS",
           "Node.js",
+          "Electron.js",
           "JavaScript (ES6+)",
           "TypeScript",
           "Python",
@@ -64,7 +65,7 @@
         "description": "Responsible for planning and developing auteons article comparison mechanism via browser automation and supplier APIs.",
         "tasks": [
           {
-            "description": "Planning, development and integration of software components and APIs in agile product development on strategic and operative level"
+            "description": "Planning, development and integration of software components and APIs in agile product development on strategic and operative level for backend"
           },
           {
             "description": "Testing, maintaining and optimizing existing software components to increase robustness, correctness and speed for core product"
@@ -79,6 +80,7 @@
         "techstack": [
           "Vue",
           "Node.js",
+          "Electron.js",
           "JavaScript (ES6+)",
           "TypeScript",
           "GraphQL",
