@@ -246,9 +246,9 @@ export const Languages = (): JSX.Element | null => {
 
 export const Language = ({ data }: { data: Types.TLanguage }): JSX.Element => {
   return (
-    <div className={styles.LanguageDetails}>
-      <span className={styles.bold}>{data.language}</span>
-      <span>{data.level}</span>
+    <div className={styles.LanguageDetails} data-testid="language-details">
+      <span className={styles.bold} data-testid="language">{data.language}</span>
+      <span data-testid="language-level">{data.level}</span>
     </div>
   )
 }
