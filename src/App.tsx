@@ -139,15 +139,15 @@ const Jobs = (): JSX.Element | null => {
 
   return (
     <div className={styles.Jobs}>
-      {jobsData.data.map((jobData: Types.TJob) => <Job {...jobData} />)}
+      {jobsData.data.map((jobData: Types.TJob) => <Job data={jobData} />)}
     </div>
   )
 }
 
-const Job = (data: Types.TJob): JSX.Element => {
+const Job = ({ data }: { data: Types.TJob }): JSX.Element => {
   const classJobDetails: string = data?.techstack ? styles.JobDetails : styles.JobDetailsFullWidth
 
-  const tasks: JSX.Element[] = data.tasks.map((task: any): JSX.Element => {
+  const tasks: JSX.Element[] = data.tasks.map((task: Types.TJobTask): JSX.Element => {
     return (
       <li>{task.description}</li>
     )
@@ -197,11 +197,11 @@ const Info = (): JSX.Element => {
 }
 
 const Education = (): JSX.Element | null => {
-  const { educationData }: any = React.useContext(AppContext)
+  const { educationData } = React.useContext<Types.TCVData | { educationData?: Types.TEducationData }>(AppContext)
 
-  if (!("data" in educationData)) return null
+  if (!educationData || !("data" in educationData)) return null
 
-  const schools = educationData.data.map((schoolData: any): JSX.Element => {
+  const schools: JSX.Element[] = educationData.data.map((schoolData: Types.TSchool): JSX.Element => {
     return <School data={schoolData} />
   })
 
@@ -214,7 +214,7 @@ const Education = (): JSX.Element | null => {
   )
 }
 
-const School = ({ data }: any): JSX.Element => {
+const School = ({ data }: { data: Types.TSchool }): JSX.Element => {
   return (
     <div className={styles.SchoolDetails}>
       <span className={styles.bold}>{data.degree}</span>
@@ -225,12 +225,12 @@ const School = ({ data }: any): JSX.Element => {
 }
 
 const Languages = (): JSX.Element | null => {
-  const { languagesData }: any = React.useContext(AppContext)
+  const { languagesData } = React.useContext<Types.TCVData | { languagesData?: Types.TLanguagesData }>(AppContext)
 
-  if (!("data" in languagesData)) return null
+  if (!languagesData || !("data" in languagesData)) return null
 
-  const languages = languagesData.data.map((languageData: any) => {
-    return <Language data={languageData} />
+  const languages: JSX.Element[] = languagesData.data.map((language: Types.TLanguage) => {
+    return <Language data={language} />
   })
 
   return (
@@ -242,7 +242,7 @@ const Languages = (): JSX.Element | null => {
   )
 }
 
-const Language = ({ data }: any): JSX.Element => {
+const Language = ({ data }: { data: Types.TLanguage }): JSX.Element => {
   return (
     <div className={styles.LanguageDetails}>
       <span className={styles.bold}>{data.language}</span>
