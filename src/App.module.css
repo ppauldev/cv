@@ -88,6 +88,7 @@ hr {
   align-items: center;
   display: flex;
   flex-direction: row;
+  font-size: 0.9em;
   padding-top: 6px;
 }
 

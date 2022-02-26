@@ -1,6 +1,6 @@
 import * as React from "react";
 import { AppContext } from "./helper/context"
-import { LoadingSpinner, LinkedInIcon, MailIcon, PhoneIcon } from "./icons/Icons"
+import { GitHubIcon, LoadingSpinner, LinkedInIcon, MailIcon, PhoneIcon } from "./icons/Icons"
 import * as cvdataJSON from "./cvdata.json"
 import styles from "./App.module.css";
 
@@ -95,6 +95,12 @@ const Contact = (): JSX.Element | null => {
             {personData.data.linkedin}
           </a>
           <LinkedInIcon />
+        </span>
+        <span>
+          <a href={`https://www.${personData.data.github}`}>
+            {personData.data.github}
+          </a>
+          <GitHubIcon />
         </span>
       </div>
     </div>
