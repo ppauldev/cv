@@ -137,9 +137,11 @@ const Jobs = (): JSX.Element | null => {
 
   if (!jobsData || !("data" in jobsData)) return null
 
+  const jobs: JSX.Element[] = jobsData.data.map((jobData: Types.TJob, index: number) => <Job data={jobData} key={index} />)
+
   return (
     <div className={styles.Jobs}>
-      {jobsData.data.map((jobData: Types.TJob) => <Job data={jobData} />)}
+      {jobs}
     </div>
   )
 }
@@ -147,9 +149,9 @@ const Jobs = (): JSX.Element | null => {
 const Job = ({ data }: { data: Types.TJob }): JSX.Element => {
   const classJobDetails: string = data?.techstack ? styles.JobDetails : styles.JobDetailsFullWidth
 
-  const tasks: JSX.Element[] = data.tasks.map((task: Types.TJobTask): JSX.Element => {
+  const tasks: JSX.Element[] = data.tasks.map((task: Types.TJobTask, index: number): JSX.Element => {
     return (
-      <li>{task.description}</li>
+      <li key={index}>{task.description}</li>
     )
   })
 
@@ -169,9 +171,9 @@ const Job = ({ data }: { data: Types.TJob }): JSX.Element => {
 const TechStack = ({ stack }: { stack: string[] | undefined }): JSX.Element | null => {
   if (!stack || stack.length === 0) return null
 
-  const stackItems: JSX.Element[] = stack.map((item: string) => {
+  const stackItems: JSX.Element[] = stack.map((item: string, index: number) => {
     return (
-      <div className={styles.StackItem}>{item}</div>
+      <div className={styles.StackItem} key={index}>{item}</div>
     )
   })
 
@@ -201,8 +203,8 @@ const Education = (): JSX.Element | null => {
 
   if (!educationData || !("data" in educationData)) return null
 
-  const schools: JSX.Element[] = educationData.data.map((schoolData: Types.TSchool): JSX.Element => {
-    return <School data={schoolData} />
+  const schools: JSX.Element[] = educationData.data.map((schoolData: Types.TSchool, index: number): JSX.Element => {
+    return <School data={schoolData} key={index} />
   })
 
   return (
@@ -229,8 +231,8 @@ const Languages = (): JSX.Element | null => {
 
   if (!languagesData || !("data" in languagesData)) return null
 
-  const languages: JSX.Element[] = languagesData.data.map((language: Types.TLanguage) => {
-    return <Language data={language} />
+  const languages: JSX.Element[] = languagesData.data.map((language: Types.TLanguage, index: number) => {
+    return <Language data={language} key={index} />
   })
 
   return (

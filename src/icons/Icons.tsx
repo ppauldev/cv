@@ -27,14 +27,14 @@ export const MailIcon = (): JSX.Element => {
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        fill-rule="evenodd"
+        fillRule="evenodd"
         d="M14 3H2a1 1 0 00-1 1v8a1 1 0 001 1h12a1 1 0 001-1V4a1 1 0 00-1-1zM2 2a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2V4a2 2 0 00-2-2H2z"
-        clip-rule="evenodd"
+        clipRule="evenodd"
       />
       <path
-        fill-rule="evenodd"
+        fillRule="evenodd"
         d="M.071 4.243a.5.5 0 01.686-.172L8 8.417l7.243-4.346a.5.5 0 01.514.858L8 9.583.243 4.93a.5.5 0 01-.172-.686z"
-        clip-rule="evenodd"
+        clipRule="evenodd"
       />
       <path
         d="M6.752 8.932l.432-.252-.504-.864-.432.252.504.864zm-6 3.5l6-3.5-.504-.864-6 3.5.504.864zm8.496-3.5l-.432-.252.504-.864.432.252-.504.864zm6 3.5l-6-3.5.504-.864 6 3.5-.504.864z"
@@ -53,14 +53,14 @@ export const PhoneIcon = (): JSX.Element => {
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        fill-rule="evenodd"
+        fillRule="evenodd"
         d="M11 1H5a1 1 0 00-1 1v12a1 1 0 001 1h6a1 1 0 001-1V2a1 1 0 00-1-1zM5 0a2 2 0 00-2 2v12a2 2 0 002 2h6a2 2 0 002-2V2a2 2 0 00-2-2H5z"
-        clip-rule="evenodd"
+        clipRule="evenodd"
       />
       <path
-        fill-rule="evenodd"
+        fillRule="evenodd"
         d="M8 14a1 1 0 100-2 1 1 0 000 2z"
-        clip-rule="evenodd"
+        clipRule="evenodd"
       />
     </svg>
   )
