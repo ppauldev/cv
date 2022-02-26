@@ -12,6 +12,16 @@ describe("abc", () => {
   })
 })
 
+describe("Component: 'Info'", () => {
+  it("should have applied a styling to elements", () => {
+    const testEducationData = cvdataJSON.educationData.data[0]
+    render(<School data={testEducationData} />)
+
+    const section = screen.getByTestId("info-section")
+
+    expect(section.className).toBe(styles.Info)
+  })
+})
 
 describe("Component: 'Education'", () => {
   it("should show the section heading text as h5", () => {

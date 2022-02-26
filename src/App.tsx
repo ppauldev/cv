@@ -191,7 +191,7 @@ export const TechStack = ({ stack }: { stack: string[] | undefined }): JSX.Eleme
 
 const Info = (): JSX.Element => {
   return (
-    <section className={styles.Info}>
+    <section className={styles.Info} data-testid="info-section">
       <Education />
       <Languages />
     </section>
@@ -218,10 +218,10 @@ export const Education = (): JSX.Element | null => {
 
 export const School = ({ data }: { data: Types.TSchool }): JSX.Element => {
   return (
-    <div className={styles.SchoolDetails} data-testid={"school-details"}>
-      <span className={styles.bold} data-testid={"school-degree"}>{data.degree}</span>
-      <span data-testid={"school-name"}>{data.name}</span>
-      <span data-testid={"school-duration"}>{data.duration}</span>
+    <div className={styles.SchoolDetails} data-testid="school-details">
+      <span className={styles.bold} data-testid="school-degree">{data.degree}</span>
+      <span data-testid="school-name">{data.name}</span>
+      <span data-testid="school-duration">{data.duration}</span>
     </div>
   )
 }
