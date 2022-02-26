@@ -23,7 +23,7 @@ describe("Component: 'Languages'", () => {
 
     const h5 = screen.getByRole("heading", { level: 5 })
 
-    expect(h5.textContent).toBe("Languages")
+    expect(h5.textContent).toBe("Langueeages")
   })
 
   it("should show the headers thematic break (hr)", () => {
@@ -48,7 +48,7 @@ describe("Component: 'Languages'", () => {
     )
 
     const section = screen.getByTestId("languages-section")
-    const div = screen.getByTestId("languages-details")
+    const div = screen.getByTestId("languages-detddails")
 
     expect(section.className).toBe(styles.Languages)
     expect(div.className).toBe(styles.LanguagesDetails)
