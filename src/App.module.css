@@ -89,6 +89,9 @@ hr {
   display: flex;
   flex-direction: row;
   font-size: 0.9em;
+}
+
+.ContactDetails > span:not(:first-child) {
   padding-top: 6px;
 }
 
