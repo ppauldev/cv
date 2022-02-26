@@ -31,7 +31,7 @@
             "description": "Planning, development and integration of software components and APIs in agile product development on strategic and operative level"
           },
           {
-            "description": "Evaluation, validation and implementation of product feature roadmap for app and automation core"
+            "description": "Evaluation, validation and implementation of product feature roadmap for app and automation core including logging and analytics (user journey)"
           },
           {
             "description": "Integration of Stripe payments system in backend, app and marketplace utilizing REST API and Webhooks"
