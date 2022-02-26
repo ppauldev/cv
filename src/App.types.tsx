@@ -1,6 +1,6 @@
 export type TEducationData = {
   label: string,
-  data: [TSchool]
+  data: TSchool[]
 }
 
 export type TSchool = {
@@ -11,15 +11,15 @@ export type TSchool = {
 
 export type TJobsData = {
   label: string,
-  data: [TJob]
+  data: TJob[]
 }
 
 export type TJob = {
   title: string,
   tenure: string,
   description: string,
-  tasks: [TJobTask],
-  techstack?: [string]
+  tasks: TJobTask[],
+  techstack?: string[]
 }
 
 export type TJobTask = {
@@ -28,7 +28,7 @@ export type TJobTask = {
 
 export type TLanguagesData = {
   label: string,
-  data: [TLanguage]
+  data: TLanguage[]
 }
 
 export type TLanguage = {
@@ -38,7 +38,7 @@ export type TLanguage = {
 
 export type TPersonData = {
   label: string,
-  data: [TPersonInfo]
+  data: TPersonInfo
 }
 
 export type TPersonInfo = {
@@ -53,7 +53,7 @@ export type TPersonInfo = {
 
 export type TSummaryData = {
   label: string,
-  data: [TSummaryText]
+  data: TSummaryText
 }
 
 export type TSummaryText = {

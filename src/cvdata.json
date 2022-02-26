@@ -1,5 +1,5 @@
 {
-  "educationdata": {
+  "educationData": {
     "label": "educationdata",
     "data": [
       {
@@ -19,7 +19,7 @@
       }
     ]
   },
-  "jobsdata": {
+  "jobsData": {
     "label": "jobsdata",
     "data": [
       {
@@ -109,7 +109,7 @@
       }
     ]
   },
-  "languagesdata": {
+  "languagesData": {
     "label": "languagesdata",
     "data": [
       {
@@ -122,7 +122,7 @@
       }
     ]
   },
-  "persondata": {
+  "personData": {
     "label": "persondata",
     "data": {
       "fullname": "Phillip Paul",
@@ -134,7 +134,7 @@
       "github": "github.com/ppauldev"
     }
   },
-  "summarydata": {
+  "summaryData": {
     "label": "summarydata",
     "data": {
       "summary": "Full stack software developer with an engineering background who relies on a passion for learning, acute attention to detail and effective communication to deliver exceptional results. My mission is to help purposeful tech companies realize their vision of the future by working pragmatically, thoroughly and business-oriented."

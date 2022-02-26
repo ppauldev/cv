@@ -2,22 +2,23 @@ import * as React from "react";
 import { AppContext } from "./helper/context"
 import { GitHubIcon, LoadingSpinner, LinkedInIcon, MailIcon, PhoneIcon } from "./icons/Icons"
 import * as cvdataJSON from "./cvdata.json"
-import styles from "./App.module.css";
+import styles from "./App.module.css"
+import * as Types from "./App.types"
 
 const App = (): JSX.Element => {
-  const [cvData, setCvData] = React.useState({})
+  const [cvData, setCvData] = React.useState<Types.TCVData | {}>({})
 
   React.useEffect(() => {
-    const data = cvdataJSON // Load data, here via JSON
+    const data: Types.TCVData = cvdataJSON // Load data, here via JSON
 
     setCvData((initial) => (
       {
         ...initial,
-        educationData: data.educationdata,
-        jobsData: data.jobsdata,
-        languagesData: data.languagesdata,
-        personData: data.persondata,
-        summaryData: data.summarydata,
+        educationData: data.educationData,
+        jobsData: data.jobsData,
+        languagesData: data.languagesData,
+        personData: data.personData,
+        summaryData: data.summaryData,
       })
     )
   }, [])
@@ -58,9 +59,9 @@ const Header = (): JSX.Element => {
 }
 
 const Person = (): JSX.Element | null => {
-  const { personData }: any = React.useContext(AppContext)
+  const { personData } = React.useContext<Types.TCVData | { personData?: Types.TPersonData }>(AppContext)
 
-  if (!("data" in personData)) return null
+  if (!personData || !("data" in personData)) return null
 
   return (
     <div className={styles.Person}>
@@ -73,9 +74,9 @@ const Person = (): JSX.Element | null => {
 }
 
 const Contact = (): JSX.Element | null => {
-  const { personData }: any = React.useContext(AppContext)
+  const { personData } = React.useContext<Types.TCVData | { personData?: Types.TPersonData }>(AppContext)
 
-  if (!("data" in personData)) return null
+  if (!personData || !("data" in personData)) return null
 
   return (
     <div className={styles.Contact}>
@@ -108,9 +109,9 @@ const Contact = (): JSX.Element | null => {
 }
 
 const Summary = (): JSX.Element | null => {
-  const { summaryData }: any = React.useContext(AppContext)
+  const { summaryData } = React.useContext<Types.TCVData | { summaryData?: Types.TSummaryData }>(AppContext)
 
-  if (!("data" in summaryData)) return null
+  if (!summaryData || !("data" in summaryData)) return null
 
   return (
     <section className={styles.Summary}>
@@ -132,22 +133,22 @@ const Experience = (): JSX.Element => {
 }
 
 const Jobs = (): JSX.Element | null => {
-  const { jobsData }: any = React.useContext(AppContext)
+  const { jobsData } = React.useContext<Types.TCVData | { jobsData?: Types.TJobsData }>(AppContext)
 
-  if (!("data" in jobsData)) return null
+  if (!jobsData || !("data" in jobsData)) return null
 
   return (
     <div className={styles.Jobs}>
-      {jobsData.data.map((jobData: any) => <Job data={jobData} />)}
+      {jobsData.data.map((jobData: Types.TJob) => <Job {...jobData} />)}
     </div>
   )
 }
 
-const Job = ({ data }: any): JSX.Element => {
+const Job = (data: Types.TJob): JSX.Element => {
   const hasTechStack: boolean = "techstack" in data
   const classJobDetails: string = hasTechStack ? styles.JobDetails : styles.JobDetailsFullWidth
 
-  const tasks = data.tasks.map((task: any): JSX.Element => {
+  const tasks: JSX.Element[] = data.tasks.map((task: any): JSX.Element => {
     return (
       <li>{task.description}</li>
     )
