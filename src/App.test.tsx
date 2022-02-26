@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import App, { Language, Languages } from './App';
+import App, { Education, Language, Languages, School } from './App';
 import styles from "./App.module.css"
 import * as cvdataJSON from "./cvdata.json"
 import { AppContext } from "./helper/context"
@@ -9,6 +9,89 @@ describe("abc", () => {
     render(<App />);
     const linkElement = screen.getByText(/Test/i);
     expect(linkElement).toBeInTheDocument();
+  })
+})
+
+
+describe("Component: 'Education'", () => {
+  it("should show the section heading text as h5", () => {
+    const testEducationData = { educationData: cvdataJSON.educationData }
+    render(
+      <AppContext.Provider value={testEducationData}>
+        <Education />
+      </AppContext.Provider>
+    )
+
+    const h5 = screen.getByRole("heading", { level: 5 })
+
+    expect(h5.textContent).toBe("Education")
+  })
+
+  it("should show the headers thematic break (hr)", () => {
+    const testEducationData = { educationData: cvdataJSON.educationData }
+    render(
+      <AppContext.Provider value={testEducationData}>
+        <Education />
+      </AppContext.Provider>
+    )
+
+    const hr = screen.getByRole("separator")
+
+    expect(hr).toBeDefined()
+  })
+
+  it("should have applied styling to elements", () => {
+    const testEducationData = { educationData: cvdataJSON.educationData }
+    render(
+      <AppContext.Provider value={testEducationData}>
+        <Education />
+      </AppContext.Provider>
+    )
+
+    const section = screen.getByTestId("education-section")
+    const div = screen.getByTestId("schools")
+
+    expect(section.className).toBe(styles.Education)
+    expect(div.className).toBe(styles.Schools)
+  })
+
+  it("should render correct amount of education data", () => {
+    const testEducationData = { educationData: cvdataJSON.educationData }
+    render(
+      <AppContext.Provider value={testEducationData}>
+        <Education />
+      </AppContext.Provider>
+    )
+
+    const div = screen.getByTestId("schools")
+
+    expect(div.childNodes.length).toBe(testEducationData.educationData.data.length)
+  })
+})
+
+describe("Component: 'School'", () => {
+  it("should have applied a styling to elements", () => {
+    const testEducationData = cvdataJSON.educationData.data[0]
+    render(<School data={testEducationData} />)
+
+    const div = screen.getByTestId("school-details")
+    const span = screen.getByTestId("school-degree")
+
+    expect(div.className).toBe(styles.SchoolDetails)
+    expect(span.className).toBe(styles.bold)
+  })
+
+  it("should render correct school data", () => {
+    const testEducationData = cvdataJSON.educationData.data[0]
+    render(<School data={testEducationData} />)
+
+    const degree = screen.getByTestId("school-degree")
+    const name = screen.getByTestId("school-name")
+    const duration = screen.getByTestId("school-duration")
+
+    expect(degree.textContent).toBe(testEducationData.degree)
+    expect(name.textContent).toBe(testEducationData.name)
+    expect(duration.textContent).toBe(testEducationData.duration)
   })
 })
 

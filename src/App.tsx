@@ -208,20 +208,20 @@ export const Education = (): JSX.Element | null => {
   })
 
   return (
-    <section className={styles.Education}>
+    <section className={styles.Education} data-testid="education-section">
       <h5>Education</h5>
       <hr />
-      <div className={styles.Schools}>{schools}</div>
+      <div className={styles.Schools} data-testid="schools">{schools}</div>
     </section>
   )
 }
 
 export const School = ({ data }: { data: Types.TSchool }): JSX.Element => {
   return (
-    <div className={styles.SchoolDetails}>
-      <span className={styles.bold}>{data.degree}</span>
-      <span>{data.name}</span>
-      <span>{data.duration}</span>
+    <div className={styles.SchoolDetails} data-testid={"school-details"}>
+      <span className={styles.bold} data-testid={"school-degree"}>{data.degree}</span>
+      <span data-testid={"school-name"}>{data.name}</span>
+      <span data-testid={"school-duration"}>{data.duration}</span>
     </div>
   )
 }
