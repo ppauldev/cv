@@ -145,8 +145,7 @@ const Jobs = (): JSX.Element | null => {
 }
 
 const Job = (data: Types.TJob): JSX.Element => {
-  const hasTechStack: boolean = "techstack" in data
-  const classJobDetails: string = hasTechStack ? styles.JobDetails : styles.JobDetailsFullWidth
+  const classJobDetails: string = data?.techstack ? styles.JobDetails : styles.JobDetailsFullWidth
 
   const tasks: JSX.Element[] = data.tasks.map((task: any): JSX.Element => {
     return (
@@ -162,13 +161,15 @@ const Job = (data: Types.TJob): JSX.Element => {
         <span>{data.description}</span>
         <ul>{tasks}</ul>
       </div>
-      {hasTechStack && <TechStack stack={data.techstack} />}
+      <TechStack stack={data?.techstack} />
     </div>
   )
 }
 
-const TechStack = ({ stack }: any): JSX.Element => {
-  const stackItems = stack.map((item: any) => {
+const TechStack = ({ stack }: { stack: string[] | undefined }): JSX.Element | null => {
+  if (!stack || stack.length === 0) return null
+
+  const stackItems: JSX.Element[] = stack.map((item: string) => {
     return (
       <div className={styles.StackItem}>{item}</div>
     )
