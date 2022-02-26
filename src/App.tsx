@@ -189,7 +189,7 @@ export const TechStack = ({ stack }: { stack: string[] | undefined }): JSX.Eleme
   )
 }
 
-const Info = (): JSX.Element => {
+export const Info = (): JSX.Element => {
   return (
     <section className={styles.Info} data-testid="info-section">
       <Education />

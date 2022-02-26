@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import App, { Education, Language, Languages, School } from './App';
+import App, { Education, Info, Language, Languages, School } from './App';
 import styles from "./App.module.css"
 import * as cvdataJSON from "./cvdata.json"
 import { AppContext } from "./helper/context"
@@ -13,9 +13,8 @@ describe("abc", () => {
 })
 
 describe("Component: 'Info'", () => {
-  it("should have applied a styling to elements", () => {
-    const testEducationData = cvdataJSON.educationData.data[0]
-    render(<School data={testEducationData} />)
+  it("should have applied a styling to element", () => {
+    render(<Info />)
 
     const section = screen.getByTestId("info-section")
 
