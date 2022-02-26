@@ -146,7 +146,7 @@ hr {
 .JobDetails {
   display: flex;
   flex-direction: column;
-  width: 76%;
+  width: 70%;
 }
 
 .JobDetailsFullWidth {
@@ -159,8 +159,8 @@ hr {
   align-items: flex-start;
   display: flex;
   flex-direction: column;
-  padding-left: 50px;
-  width: 30%;
+  padding-left: 4%;
+  width: 26%;
 }
 
 .JobTechStack > p {
