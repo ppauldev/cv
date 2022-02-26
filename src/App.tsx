@@ -166,6 +166,7 @@ const TechStack = ({ stack }: any): JSX.Element => {
       <div className={styles.StackItem}>{item}</div>
     )
   })
+
   return (
     <div className={styles.JobTechStack}>
       <p>Tech Stack</p>
