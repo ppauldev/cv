@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import App, { CVContent, Education, Experience, Header, Info, Jobs, Language, Languages, School, Summary } from './App';
+import App, { CVContent, Education, Experience, Header, Info, Jobs, Language, Languages, Person, School, Summary } from './App';
 import styles from "./App.module.css"
 import * as cvdataJSON from "./cvdata.json"
 import { AppContext } from "./helper/context"
@@ -33,7 +33,35 @@ describe("Component: 'Header'", () => {
 })
 
 describe("Component: 'Person'", () => {
-  //
+  it("should have applied styling to elements", () => {
+    const testPersonData = { personData: cvdataJSON.personData }
+    render(
+      <AppContext.Provider value={testPersonData}>
+        <Person />
+      </AppContext.Provider>
+    )
+
+    const wrapper = screen.getByTestId("person-wrapper")
+    const div = screen.getByTestId("person-details")
+
+    expect(wrapper.className).toBe(styles.Person)
+    expect(div.className).toBe(styles.PersonDetails)
+  })
+
+  it("should show correct person data", () => {
+    const testPersonData = { personData: cvdataJSON.personData }
+    render(
+      <AppContext.Provider value={testPersonData}>
+        <Person />
+      </AppContext.Provider>
+    )
+
+    const h2 = screen.getByRole("heading", { level: 2 })
+    const h3 = screen.getByRole("heading", { level: 3 })
+
+    expect(h2.textContent).toBe(testPersonData.personData.data.fullname)
+    expect(h3.textContent).toBe(testPersonData.personData.data.role)
+  })
 })
 
 describe("Component: 'Contact'", () => {

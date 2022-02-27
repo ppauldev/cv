@@ -64,8 +64,8 @@ export const Person = (): JSX.Element | null => {
   if (!personData || !("data" in personData)) return null
 
   return (
-    <div className={styles.Person}>
-      <div className={styles.PersonDetails}>
+    <div className={styles.Person} data-testid="person-wrapper">
+      <div className={styles.PersonDetails} data-testid="person-details">
         <h2>{personData.data.fullname}</h2>
         <h3>{personData.data.role}</h3>
       </div>
