@@ -21,7 +21,6 @@
     "build": "react-scripts build",
     "test": "cross-env CI=true react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "deploy": "npm run build && gh-pages -d dist -b main",
     "husky-install": "husky install"
   },
   "husky": {
@@ -50,7 +49,6 @@
   },
   "devDependencies": {
     "cross-env": "^7.0.3",
-    "gh-pages": "^3.2.3",
     "husky": "^7.0.4"
   }
 }
