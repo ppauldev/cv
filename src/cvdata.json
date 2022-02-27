@@ -1,0 +1,143 @@
+{
+  "educationData": {
+    "label": "educationdata",
+    "data": [
+      {
+        "degree": "Web Development Bootcamp",
+        "name": "Ironhack",
+        "duration": "2020"
+      },
+      {
+        "degree": "MSc in Material Science",
+        "name": "University Jena",
+        "duration": "2014 - 2017"
+      },
+      {
+        "degree": "BEng in Industrial Engineering",
+        "name": "University of Applied Sciences Trier",
+        "duration": "2009 - 2013"
+      }
+    ]
+  },
+  "jobsData": {
+    "label": "jobsdata",
+    "data": [
+      {
+        "title": "Software Engineer, ZkSystems GmbH (Startup, seed phase)",
+        "tenure": "4/2021 - now",
+        "description": "Responsible for planning and developing the app (cross-platform) and automation core for the ZeroWork.io launch",
+        "tasks": [
+          {
+            "description": "Planning, development and integration of software components and APIs in agile product development on strategic and operative level"
+          },
+          {
+            "description": "Evaluation, validation and implementation of product feature roadmap for app and automation core including logging and analytics (user journey)"
+          },
+          {
+            "description": "Integration of Stripe payments system in backend, app and marketplace utilizing REST API and Webhooks"
+          },
+          {
+            "description": "Integration of queue management system for workflow execution in backend and app utilizing AWS SQS, Redis and Bull QM"
+          },
+          {
+            "description": "Built automation core (greenfield project) in Python to drive No-Code building logic of app"
+          },
+          {
+            "description": "Migration of Python code base to TypeScript to account for future requirements on performance, scalability and maintainability"
+          }
+        ],
+        "techstack": [
+          "React",
+          "Next JS",
+          "Node.js",
+          "Electron.js",
+          "JavaScript (ES6+)",
+          "TypeScript",
+          "Python",
+          "Django",
+          "PostgreSQL",
+          "AWS"
+        ]
+      },
+      {
+        "title": "Web Developer, auteon GmbH (Startup, PoC phase)",
+        "tenure": "7/2020 - 3/2021",
+        "description": "Responsible for planning and developing auteons article comparison mechanism via browser automation and supplier APIs",
+        "tasks": [
+          {
+            "description": "Planning, development and integration of software components and APIs in agile product development on strategic and operative level for backend"
+          },
+          {
+            "description": "Testing, maintaining and optimizing existing software components to increase robustness, correctness and speed for core product"
+          },
+          {
+            "description": "Coordination, support and code review for 3 working students within the automation team"
+          },
+          {
+            "description": "Migration of monolithic legacy code to modular automation core with Clean Code approach"
+          }
+        ],
+        "techstack": [
+          "Vue",
+          "Node.js",
+          "Electron.js",
+          "JavaScript (ES6+)",
+          "TypeScript",
+          "GraphQL",
+          "Hasura",
+          "PostgreSQL"
+        ]
+      },
+      {
+        "title": "Technical Account Manager, Hilti AG",
+        "tenure": "11/2017 - 1/2020",
+        "description": "Responsible for 700+ industrial clients (SME) regarding consulting and direct sales in defined territory in Berlin area",
+        "tasks": [
+          {
+            "description": "Build, care and develop customer relations in accordance to company targets and cost efficient resourcing"
+          },
+          {
+            "description": "Product presentation, delivering technical workshops and consulting customers with company's systematic sales approach"
+          },
+          {
+            "description": "Qualitative and quantitive market research in cooperation with leadership team and technical task force to address market opportunity"
+          },
+          {
+            "description": "Admission to Hilti's Top Club Germany by the general management for exceeding strategic company targets for 2 consecutive years based on customer loyalty, revenue growth and execution of companys long-term growth initiatives"
+          }
+        ]
+      }
+    ]
+  },
+  "languagesData": {
+    "label": "languagesdata",
+    "data": [
+      {
+        "language": "German",
+        "level": "native"
+      },
+      {
+        "language": "English",
+        "level": "C1"
+      }
+    ]
+  },
+  "personData": {
+    "label": "persondata",
+    "data": {
+      "fullname": "Phillip Paul",
+      "role": "Software Developer",
+      "email": "phillip.paul@t-online.de",
+      "emailsubject": "Hi Phillip!",
+      "phone": "+49 176 3177 8623",
+      "linkedin": "linkedin.com/in/phillippaul",
+      "github": "github.com/ppauldev"
+    }
+  },
+  "summaryData": {
+    "label": "summarydata",
+    "data": {
+      "summary": "Full stack software developer with an engineering background who relies on a passion for learning, acute attention to detail and effective communication to deliver exceptional results. My mission is to help purposeful tech companies realize their vision of the future by working pragmatically, thoroughly and business-oriented."
+    }
+  }
+}
