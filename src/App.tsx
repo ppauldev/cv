@@ -173,15 +173,15 @@ export const TechStack = ({ stack }: { stack: string[] | undefined }): JSX.Eleme
 
   const stackItems: JSX.Element[] = stack.map((item: string, index: number) => {
     return (
-      <div className={styles.StackItem} key={index}>{item}</div>
+      <div className={styles.StackItem} data-testid="stack-item" key={index}>{item}</div>
     )
   })
 
   return (
-    <div className={styles.JobTechStack}>
-      <p>Tech Stack</p>
-      <div className={styles.StackItems}>
-        <div>
+    <div className={styles.JobTechStack} data-testid="tech-stack">
+      <p data-testid="tech-stack-title">Tech Stack</p>
+      <div className={styles.StackItems} data-testid="stack-items-wrapper">
+        <div data-testid="stack-items">
           {stackItems}
         </div>
       </div>

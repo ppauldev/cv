@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import App, { Contact, CVContent, Education, Experience, Header, Info, Job, Jobs, Language, Languages, Person, School, Summary } from './App';
+import App, { Contact, CVContent, Education, Experience, Header, Info, Job, Jobs, Language, Languages, Person, School, Summary, TechStack } from './App';
 import styles from "./App.module.css"
 import * as cvdataJSON from "./cvdata.json"
 import { AppContext } from "./helper/context"
@@ -271,7 +271,33 @@ describe("Component: 'Job'", () => {
 })
 
 describe("Component: 'TechStack'", () => {
-  //
+  it("should have applied styling to elements", () => {
+    const testStackData = cvdataJSON.jobsData.data[0].techstack
+    render(<TechStack stack={testStackData} />)
+
+    const stack = screen.getByTestId("tech-stack")
+    const items = screen.getByTestId("stack-items-wrapper")
+    const itemNodes = screen.getAllByTestId("stack-item")
+
+    expect(stack.className).toBe(styles.JobTechStack)
+    expect(items.className).toBe(styles.StackItems)
+    itemNodes.forEach(item => expect(item.className).toBe(styles.StackItem))
+  })
+
+  it("should render correct stack data", () => {
+    const testStackData = cvdataJSON.jobsData.data[0].techstack
+    render(<TechStack stack={testStackData} />)
+
+    const title = screen.getByTestId("tech-stack-title")
+    const items = screen.getByTestId("stack-items")
+    const itemNodes = screen.getAllByTestId("stack-item")
+
+    expect(title.textContent).toBe("Tech Stack")
+    expect(items.childNodes.length).toBe(testStackData?.length)
+
+    if (!(items.childNodes.length === testStackData?.length)) return
+    itemNodes.forEach((item, index) => expect(item.textContent).toBe(testStackData[index]))
+  })
 })
 
 describe("Component: 'Info'", () => {
