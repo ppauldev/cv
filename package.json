@@ -17,6 +17,10 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "tsc": "tsc",
+    "tscw": "tsc --watch",
+    "wp": "webpack",
+    "wpw": "webpack --watch",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "cross-env CI=true react-scripts test --env=jsdom",
@@ -49,6 +53,11 @@
   },
   "devDependencies": {
     "cross-env": "^7.0.3",
-    "husky": "^7.0.4"
+    "css-loader": "^6.6.0",
+    "husky": "^7.0.4",
+    "style-loader": "^3.3.1",
+    "ts-loader": "^9.2.6",
+    "webpack": "^5.69.1",
+    "webpack-cli": "^4.9.2"
   }
 }
