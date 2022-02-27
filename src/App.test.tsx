@@ -13,8 +13,8 @@ describe("Component: 'App", () => {
     const app = screen.getByTestId("app")
     const cvWrapper = screen.getByTestId("cv-wrapper")
 
-    expect(app.className).toBe(styles.App)
-    expect(cvWrapper.className).toBe(styles.CVWrapper)
+    expect(app).toHaveClass(styles.App)
+    expect(cvWrapper).toHaveClass(styles.CVWrapper)
   })
 
   it("should show loading spinner on load", () => {
@@ -33,7 +33,7 @@ describe("Component: 'CVContent'", () => {
 
     const wrapper = screen.getByTestId("cvcontent-wrapper")
 
-    expect(wrapper.className).toBe(styles.CVContent)
+    expect(wrapper).toHaveClass(styles.CVContent)
   })
 })
 
@@ -43,7 +43,7 @@ describe("Component: 'Header'", () => {
 
     const section = screen.getByTestId("header-section")
 
-    expect(section.className).toBe(styles.Header)
+    expect(section).toHaveClass(styles.Header)
   })
 })
 
@@ -59,8 +59,8 @@ describe("Component: 'Person'", () => {
     const wrapper = screen.getByTestId("person-wrapper")
     const div = screen.getByTestId("person-details")
 
-    expect(wrapper.className).toBe(styles.Person)
-    expect(div.className).toBe(styles.PersonDetails)
+    expect(wrapper).toHaveClass(styles.Person)
+    expect(div).toHaveClass(styles.PersonDetails)
   })
 
   it("should show correct person data", () => {
@@ -74,8 +74,8 @@ describe("Component: 'Person'", () => {
     const h2 = screen.getByRole("heading", { level: 2 })
     const h3 = screen.getByRole("heading", { level: 3 })
 
-    expect(h2.textContent).toBe(testPersonData.personData.data.fullname)
-    expect(h3.textContent).toBe(testPersonData.personData.data.role)
+    expect(h2).toHaveTextContent(testPersonData.personData.data.fullname)
+    expect(h3).toHaveTextContent(testPersonData.personData.data.role)
   })
 })
 
@@ -91,8 +91,8 @@ describe("Component: 'Contact'", () => {
     const wrapper = screen.getByTestId("contact-wrapper")
     const div = screen.getByTestId("contact-details")
 
-    expect(wrapper.className).toBe(styles.Contact)
-    expect(div.className).toBe(styles.ContactDetails)
+    expect(wrapper).toHaveClass(styles.Contact)
+    expect(div).toHaveClass(styles.ContactDetails)
   })
 
   it("should show correct contact data", () => {
@@ -107,9 +107,9 @@ describe("Component: 'Contact'", () => {
     const linkedin = screen.getByTestId("ref-linkedin")
     const github = screen.getByTestId("ref-github")
 
-    expect(email.textContent).toBe(testPersonData.personData.data.email)
-    expect(linkedin.textContent).toBe(testPersonData.personData.data.linkedin)
-    expect(github.textContent).toBe(testPersonData.personData.data.github)
+    expect(email).toHaveTextContent(testPersonData.personData.data.email)
+    expect(linkedin).toHaveTextContent(testPersonData.personData.data.linkedin)
+    expect(github).toHaveTextContent(testPersonData.personData.data.github)
   })
 
   it("should have correct contact links", () => {
@@ -141,7 +141,7 @@ describe("Component: 'Summary'", () => {
 
     const h4 = screen.getByRole("heading", { level: 4 })
 
-    expect(h4.textContent).toBe("Profile Summary")
+    expect(h4).toHaveTextContent("Profile Summary")
   })
 
   it("should show the headers thematic break (hr)", () => {
@@ -167,7 +167,7 @@ describe("Component: 'Summary'", () => {
 
     const section = screen.getByTestId("summary-section")
 
-    expect(section.className).toBe(styles.Summary)
+    expect(section).toHaveClass(styles.Summary)
   })
 
   it("should show correct summary data", () => {
@@ -180,7 +180,7 @@ describe("Component: 'Summary'", () => {
 
     const p = screen.getByTestId("summary-text")
 
-    expect(p.textContent).toBe(testSummaryData.summaryData.data.summary)
+    expect(p).toHaveTextContent(testSummaryData.summaryData.data.summary)
   })
 })
 
@@ -195,7 +195,7 @@ describe("Component: 'Experience'", () => {
 
     const h4 = screen.getByRole("heading", { level: 4 })
 
-    expect(h4.textContent).toBe("Experience")
+    expect(h4).toHaveTextContent("Experience")
   })
 
   it("should show the headers thematic break (hr)", () => {
@@ -221,7 +221,7 @@ describe("Component: 'Experience'", () => {
 
     const section = screen.getByTestId("experience-section")
 
-    expect(section.className).toBe(styles.Experience)
+    expect(section).toHaveClass(styles.Experience)
   })
 })
 
@@ -236,7 +236,7 @@ describe("Component: 'Jobs'", () => {
 
     const wrapper = screen.getByTestId("jobs")
 
-    expect(wrapper.className).toBe(styles.Jobs)
+    expect(wrapper).toHaveClass(styles.Jobs)
   })
 
   it("should render correct amount of jobs data", () => {
@@ -263,10 +263,10 @@ describe("Component: 'Job'", () => {
     const title = screen.getByTestId("job-title")
     const tenure = screen.getByTestId("job-tenure")
 
-    expect(wrapper.className).toBe(styles.Job)
-    expect(details.className).toBe(styles.JobDetails)
-    expect(title.className).toBe(styles.bold)
-    expect(tenure.className).toBe(styles.light)
+    expect(wrapper).toHaveClass(styles.Job)
+    expect(details).toHaveClass(styles.JobDetails)
+    expect(title).toHaveClass(styles.bold)
+    expect(tenure).toHaveClass(styles.light)
   })
 
   it("should render correct job data", () => {
@@ -278,9 +278,9 @@ describe("Component: 'Job'", () => {
     const description = screen.getByTestId("job-description")
     const tasks = screen.getByTestId("job-tasks")
 
-    expect(title.textContent).toBe(testJobData.title)
-    expect(tenure.textContent).toBe(testJobData.tenure)
-    expect(description.textContent).toBe(testJobData.description)
+    expect(title).toHaveTextContent(testJobData.title)
+    expect(tenure).toHaveTextContent(testJobData.tenure)
+    expect(description).toHaveTextContent(testJobData.description)
     expect(tasks.childNodes.length).toBe(testJobData.tasks.length)
   })
 })
@@ -294,9 +294,9 @@ describe("Component: 'TechStack'", () => {
     const items = screen.getByTestId("stack-items-wrapper")
     const itemNodes = screen.getAllByTestId("stack-item")
 
-    expect(stack.className).toBe(styles.JobTechStack)
-    expect(items.className).toBe(styles.StackItems)
-    itemNodes.forEach(item => expect(item.className).toBe(styles.StackItem))
+    expect(stack).toHaveClass(styles.JobTechStack)
+    expect(items).toHaveClass(styles.StackItems)
+    itemNodes.forEach(item => expect(item).toHaveClass(styles.StackItem))
   })
 
   it("should render correct stack data", () => {
@@ -307,11 +307,11 @@ describe("Component: 'TechStack'", () => {
     const items = screen.getByTestId("stack-items")
     const itemNodes = screen.getAllByTestId("stack-item")
 
-    expect(title.textContent).toBe("Tech Stack")
+    expect(title).toHaveTextContent("Tech Stack")
     expect(items.childNodes.length).toBe(testStackData?.length)
 
     if (!(items.childNodes.length === testStackData?.length)) return
-    itemNodes.forEach((item, index) => expect(item.textContent).toBe(testStackData[index]))
+    itemNodes.forEach((item, index) => expect(item).toHaveTextContent(testStackData[index]))
   })
 })
 
@@ -321,7 +321,7 @@ describe("Component: 'Info'", () => {
 
     const section = screen.getByTestId("info-section")
 
-    expect(section.className).toBe(styles.Info)
+    expect(section).toHaveClass(styles.Info)
   })
 })
 
@@ -336,7 +336,7 @@ describe("Component: 'Education'", () => {
 
     const h5 = screen.getByRole("heading", { level: 5 })
 
-    expect(h5.textContent).toBe("Education")
+    expect(h5).toHaveTextContent("Education")
   })
 
   it("should show the headers thematic break (hr)", () => {
@@ -363,8 +363,8 @@ describe("Component: 'Education'", () => {
     const section = screen.getByTestId("education-section")
     const div = screen.getByTestId("schools")
 
-    expect(section.className).toBe(styles.Education)
-    expect(div.className).toBe(styles.Schools)
+    expect(section).toHaveClass(styles.Education)
+    expect(div).toHaveClass(styles.Schools)
   })
 
   it("should render correct amount of education data", () => {
@@ -389,8 +389,8 @@ describe("Component: 'School'", () => {
     const div = screen.getByTestId("school-details")
     const span = screen.getByTestId("school-degree")
 
-    expect(div.className).toBe(styles.SchoolDetails)
-    expect(span.className).toBe(styles.bold)
+    expect(div).toHaveClass(styles.SchoolDetails)
+    expect(span).toHaveClass(styles.bold)
   })
 
   it("should render correct school data", () => {
@@ -401,9 +401,9 @@ describe("Component: 'School'", () => {
     const name = screen.getByTestId("school-name")
     const duration = screen.getByTestId("school-duration")
 
-    expect(degree.textContent).toBe(testEducationData.degree)
-    expect(name.textContent).toBe(testEducationData.name)
-    expect(duration.textContent).toBe(testEducationData.duration)
+    expect(degree).toHaveTextContent(testEducationData.degree)
+    expect(name).toHaveTextContent(testEducationData.name)
+    expect(duration).toHaveTextContent(testEducationData.duration)
   })
 })
 
@@ -418,7 +418,7 @@ describe("Component: 'Languages'", () => {
 
     const h5 = screen.getByRole("heading", { level: 5 })
 
-    expect(h5.textContent).toBe("Languages")
+    expect(h5).toHaveTextContent("Languages")
   })
 
   it("should show the headers thematic break (hr)", () => {
@@ -445,8 +445,8 @@ describe("Component: 'Languages'", () => {
     const section = screen.getByTestId("languages-section")
     const div = screen.getByTestId("languages-details")
 
-    expect(section.className).toBe(styles.Languages)
-    expect(div.className).toBe(styles.LanguagesDetails)
+    expect(section).toHaveClass(styles.Languages)
+    expect(div).toHaveClass(styles.LanguagesDetails)
   })
 
   it("should render correct amount of language data", () => {
@@ -471,8 +471,8 @@ describe("Component: 'Language'", () => {
     const div = screen.getByTestId("language-details")
     const span = screen.getByTestId("language")
 
-    expect(div.className).toBe(styles.LanguageDetails)
-    expect(span.className).toBe(styles.bold)
+    expect(div).toHaveClass(styles.LanguageDetails)
+    expect(span).toHaveClass(styles.bold)
   })
 
   it("should render correct language data", () => {
@@ -482,7 +482,7 @@ describe("Component: 'Language'", () => {
     const language = screen.getByTestId("language")
     const level = screen.getByTestId("language-level")
 
-    expect(language.textContent).toBe(testLanguageData.language)
-    expect(level.textContent).toBe(testLanguageData.level)
+    expect(language).toHaveTextContent(testLanguageData.language)
+    expect(level).toHaveTextContent(testLanguageData.level)
   })
 })
