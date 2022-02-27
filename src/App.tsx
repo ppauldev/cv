@@ -156,12 +156,12 @@ export const Job = ({ data }: { data: Types.TJob }): JSX.Element => {
   })
 
   return (
-    <div className={styles.Job}>
-      <div className={classJobDetails}>
-        <span className={styles.bold}>{data.title}</span>
-        <span className={styles.light}>{data.tenure}</span>
-        <span>{data.description}</span>
-        <ul>{tasks}</ul>
+    <div className={styles.Job} data-testid="job-wrapper">
+      <div className={classJobDetails} data-testid="job-details">
+        <span className={styles.bold} data-testid="job-title">{data.title}</span>
+        <span className={styles.light} data-testid="job-tenure">{data.tenure}</span>
+        <span data-testid="job-description">{data.description}</span>
+        <ul data-testid="job-tasks">{tasks}</ul>
       </div>
       <TechStack stack={data?.techstack} />
     </div>

@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import App, { Contact, CVContent, Education, Experience, Header, Info, Jobs, Language, Languages, Person, School, Summary } from './App';
+import App, { Contact, CVContent, Education, Experience, Header, Info, Job, Jobs, Language, Languages, Person, School, Summary } from './App';
 import styles from "./App.module.css"
 import * as cvdataJSON from "./cvdata.json"
 import { AppContext } from "./helper/context"
@@ -239,7 +239,35 @@ describe("Component: 'Jobs'", () => {
 })
 
 describe("Component: 'Job'", () => {
-  //
+  it("should have applied styling to elements", () => {
+    const testJobData = cvdataJSON.jobsData.data[0]
+    render(<Job data={testJobData} />)
+
+    const wrapper = screen.getByTestId("job-wrapper")
+    const details = screen.getByTestId("job-details")
+    const title = screen.getByTestId("job-title")
+    const tenure = screen.getByTestId("job-tenure")
+
+    expect(wrapper.className).toBe(styles.Job)
+    expect(details.className).toBe(styles.JobDetails)
+    expect(title.className).toBe(styles.bold)
+    expect(tenure.className).toBe(styles.light)
+  })
+
+  it("should render correct job data", () => {
+    const testJobData = cvdataJSON.jobsData.data[0]
+    render(<Job data={testJobData} />)
+
+    const title = screen.getByTestId("job-title")
+    const tenure = screen.getByTestId("job-tenure")
+    const description = screen.getByTestId("job-description")
+    const tasks = screen.getByTestId("job-tasks")
+
+    expect(title.textContent).toBe(testJobData.title)
+    expect(tenure.textContent).toBe(testJobData.tenure)
+    expect(description.textContent).toBe(testJobData.description)
+    expect(tasks.childNodes.length).toBe(testJobData.tasks.length)
+  })
 })
 
 describe("Component: 'TechStack'", () => {
