@@ -51,7 +51,7 @@ export const CVContent = (): JSX.Element => {
 
 export const Header = (): JSX.Element => {
   return (
-    <section className={styles.Header}>
+    <section className={styles.Header} data-testid="header-section">
       <Person />
       <Contact />
     </section>

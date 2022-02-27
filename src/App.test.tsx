@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import App, { CVContent, Education, Info, Language, Languages, School } from './App';
+import App, { CVContent, Education, Header, Info, Language, Languages, School } from './App';
 import styles from "./App.module.css"
 import * as cvdataJSON from "./cvdata.json"
 import { AppContext } from "./helper/context"
@@ -23,7 +23,13 @@ describe("Component: 'CVContent'", () => {
 })
 
 describe("Component: 'Header'", () => {
-  //
+  it("should have applied a styling to element", () => {
+    render(<Header />)
+
+    const section = screen.getByTestId("header-section")
+
+    expect(section.className).toBe(styles.Header)
+  })
 })
 
 describe("Component: 'Person'", () => {
