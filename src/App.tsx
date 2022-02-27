@@ -124,7 +124,7 @@ export const Summary = (): JSX.Element | null => {
 
 export const Experience = (): JSX.Element => {
   return (
-    <section className={styles.Experience}>
+    <section className={styles.Experience} data-testid="experience-section">
       <h4>Experience</h4>
       <hr />
       <Jobs />
@@ -140,7 +140,7 @@ export const Jobs = (): JSX.Element | null => {
   const jobs: JSX.Element[] = jobsData.data.map((jobData: Types.TJob, index: number) => <Job data={jobData} key={index} />)
 
   return (
-    <div className={styles.Jobs}>
+    <div className={styles.Jobs} data-testid="jobs">
       {jobs}
     </div>
   )

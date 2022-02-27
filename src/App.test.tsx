@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import App, { CVContent, Education, Header, Info, Language, Languages, School } from './App';
+import App, { CVContent, Education, Experience, Header, Info, Language, Languages, School } from './App';
 import styles from "./App.module.css"
 import * as cvdataJSON from "./cvdata.json"
 import { AppContext } from "./helper/context"
@@ -45,7 +45,44 @@ describe("Component: 'Summary'", () => {
 })
 
 describe("Component: 'Experience'", () => {
-  //
+  it("should show the section heading text as h5", () => {
+    const testJobsData = { jobsData: cvdataJSON.jobsData }
+    render(
+      <AppContext.Provider value={testJobsData}>
+        <Experience />
+      </AppContext.Provider>
+    )
+
+    const h4 = screen.getByRole("heading", { level: 4 })
+
+    expect(h4.textContent).toBe("Experience")
+  })
+
+  it("should show the headers thematic break (hr)", () => {
+    const testJobsData = { jobsData: cvdataJSON.jobsData }
+    render(
+      <AppContext.Provider value={testJobsData}>
+        <Experience />
+      </AppContext.Provider>
+    )
+
+    const hr = screen.getByRole("separator")
+
+    expect(hr).toBeDefined()
+  })
+
+  it("should have applied styling to elements", () => {
+    const testJobsData = { jobsData: cvdataJSON.jobsData }
+    render(
+      <AppContext.Provider value={testJobsData}>
+        <Experience />
+      </AppContext.Provider>
+    )
+
+    const section = screen.getByTestId("experience-section")
+
+    expect(section.className).toBe(styles.Experience)
+  })
 })
 
 describe("Component: 'Jobs'", () => {
