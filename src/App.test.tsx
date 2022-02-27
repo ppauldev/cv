@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import App, { CVContent, Education, Experience, Header, Info, Jobs, Language, Languages, Person, School, Summary } from './App';
+import App, { Contact, CVContent, Education, Experience, Header, Info, Jobs, Language, Languages, Person, School, Summary } from './App';
 import styles from "./App.module.css"
 import * as cvdataJSON from "./cvdata.json"
 import { AppContext } from "./helper/context"
@@ -65,7 +65,54 @@ describe("Component: 'Person'", () => {
 })
 
 describe("Component: 'Contact'", () => {
-  //
+  it("should have applied styling to elements", () => {
+    const testPersonData = { personData: cvdataJSON.personData }
+    render(
+      <AppContext.Provider value={testPersonData}>
+        <Contact />
+      </AppContext.Provider>
+    )
+
+    const wrapper = screen.getByTestId("contact-wrapper")
+    const div = screen.getByTestId("contact-details")
+
+    expect(wrapper.className).toBe(styles.Contact)
+    expect(div.className).toBe(styles.ContactDetails)
+  })
+
+  it("should show correct contact data", () => {
+    const testPersonData = { personData: cvdataJSON.personData }
+    render(
+      <AppContext.Provider value={testPersonData}>
+        <Contact />
+      </AppContext.Provider>
+    )
+
+    const email = screen.getByTestId("ref-email")
+    const linkedin = screen.getByTestId("ref-linkedin")
+    const github = screen.getByTestId("ref-github")
+
+    expect(email.textContent).toBe(testPersonData.personData.data.email)
+    expect(linkedin.textContent).toBe(testPersonData.personData.data.linkedin)
+    expect(github.textContent).toBe(testPersonData.personData.data.github)
+  })
+
+  it("should have correct contact links", () => {
+    const testPersonData = { personData: cvdataJSON.personData }
+    render(
+      <AppContext.Provider value={testPersonData}>
+        <Contact />
+      </AppContext.Provider>
+    )
+
+    const email = screen.getByTestId("ref-email")
+    const linkedin = screen.getByTestId("ref-linkedin")
+    const github = screen.getByTestId("ref-github")
+
+    expect(email).toHaveAttribute("href", `mailto:${testPersonData.personData.data.email}?subject=${testPersonData.personData.data.emailsubject}`)
+    expect(linkedin).toHaveAttribute("href", `https://www.${testPersonData.personData.data.linkedin}`)
+    expect(github).toHaveAttribute("href", `https://www.${testPersonData.personData.data.github}`)
+  })
 })
 
 describe("Component: 'Summary'", () => {

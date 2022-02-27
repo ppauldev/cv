@@ -79,10 +79,10 @@ export const Contact = (): JSX.Element | null => {
   if (!personData || !("data" in personData)) return null
 
   return (
-    <div className={styles.Contact}>
-      <div className={styles.ContactDetails}>
+    <div className={styles.Contact} data-testid="contact-wrapper">
+      <div className={styles.ContactDetails} data-testid="contact-details">
         <span>
-          <a href={`mailto:${personData.data.email}?subject=${personData.data.emailsubject}`}>
+          <a href={`mailto:${personData.data.email}?subject=${personData.data.emailsubject}`} data-testid="ref-email">
             {personData.data.email}
           </a>
           <MailIcon />
@@ -92,13 +92,13 @@ export const Contact = (): JSX.Element | null => {
           <PhoneIcon />
         </span>
         <span>
-          <a href={`https://www.${personData.data.linkedin}`}>
+          <a href={`https://www.${personData.data.linkedin}`} data-testid="ref-linkedin">
             {personData.data.linkedin}
           </a>
           <LinkedInIcon />
         </span>
         <span>
-          <a href={`https://www.${personData.data.github}`}>
+          <a href={`https://www.${personData.data.github}`} data-testid="ref-github">
             {personData.data.github}
           </a>
           <GitHubIcon />
