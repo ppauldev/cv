@@ -1,4 +1,4 @@
-import * as React from "react";
+import * as React from "react"
 import { AppContext } from "./helper/context"
 import { isEmptyObject } from "./helper/utils"
 import { GitHubIcon, LoadingSpinner, LinkedInIcon, MailIcon, PhoneIcon } from "./icons/Icons"
@@ -27,7 +27,7 @@ const App = ({ loadData }: { loadData: () => Types.TCVData | Types.TCVDataInitia
         </div>
       </div>
     </AppContext.Provider>
-  );
+  )
 }
 
 export const CVContent = (): JSX.Element => {
@@ -245,4 +245,4 @@ export const Language = ({ data }: { data: Types.TLanguage }): JSX.Element => {
   )
 }
 
-export default App;
+export default App

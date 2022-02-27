@@ -1,6 +1,6 @@
-import { render, screen } from "@testing-library/react";
-import { loadData as _loadData } from "./api/loadData";
-import App, { Contact, CVContent, Education, Experience, Header, Info, Job, Jobs, Language, Languages, Person, School, Summary, TechStack } from "./App";
+import { render, screen } from "@testing-library/react"
+import { loadData as _loadData } from "./api/loadData"
+import App, { Contact, CVContent, Education, Experience, Header, Info, Job, Jobs, Language, Languages, Person, School, Summary, TechStack } from "./App"
 import styles from "./App.module.css"
 import * as cvdataJSON from "./cvdata.json"
 import { AppContext } from "./helper/context"
