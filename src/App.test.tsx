@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import App, { CVContent, Education, Experience, Header, Info, Language, Languages, School } from './App';
+import App, { CVContent, Education, Experience, Header, Info, Jobs, Language, Languages, School } from './App';
 import styles from "./App.module.css"
 import * as cvdataJSON from "./cvdata.json"
 import { AppContext } from "./helper/context"
@@ -86,7 +86,31 @@ describe("Component: 'Experience'", () => {
 })
 
 describe("Component: 'Jobs'", () => {
-  //
+  it("should have applied styling to element", () => {
+    const testJobsData = { jobsData: cvdataJSON.jobsData }
+    render(
+      <AppContext.Provider value={testJobsData}>
+        <Jobs />
+      </AppContext.Provider>
+    )
+
+    const wrapper = screen.getByTestId("jobs")
+
+    expect(wrapper.className).toBe(styles.Jobs)
+  })
+
+  it("should render correct amount of jobs data", () => {
+    const testJobsData = { jobsData: cvdataJSON.jobsData }
+    render(
+      <AppContext.Provider value={testJobsData}>
+        <Jobs />
+      </AppContext.Provider>
+    )
+
+    const div = screen.getByTestId("jobs")
+
+    expect(div.childNodes.length).toBe(testJobsData.jobsData.data.length)
+  })
 })
 
 describe("Component: 'Job'", () => {
