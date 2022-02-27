@@ -1,14 +1,29 @@
-import { render, screen } from '@testing-library/react';
-import App, { Contact, CVContent, Education, Experience, Header, Info, Job, Jobs, Language, Languages, Person, School, Summary, TechStack } from './App';
+import { render, screen } from "@testing-library/react";
+import { loadData as _loadData } from "./api/loadData";
+import App, { Contact, CVContent, Education, Experience, Header, Info, Job, Jobs, Language, Languages, Person, School, Summary, TechStack } from "./App";
 import styles from "./App.module.css"
 import * as cvdataJSON from "./cvdata.json"
 import { AppContext } from "./helper/context"
 
 describe("Component: 'App", () => {
-  it('should render App and find Test', () => {
-    render(<App />);
-    const linkElement = screen.getByText(/Test/i);
-    expect(linkElement).toBeInTheDocument();
+  it("should have applied a styling to elements after successful data load", () => {
+    const testLoadData = _loadData
+    render(<App loadData={testLoadData} />)
+
+    const app = screen.getByTestId("app")
+    const cvWrapper = screen.getByTestId("cv-wrapper")
+
+    expect(app.className).toBe(styles.App)
+    expect(cvWrapper.className).toBe(styles.CVWrapper)
+  })
+
+  it("should show loading spinner on load", () => {
+    const testLoadData = () => { return {} }
+    render(<App loadData={testLoadData} />)
+
+    const spinner = screen.getByTestId("loading-spinner")
+
+    expect(spinner).toBeVisible()
   })
 })
 

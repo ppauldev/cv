@@ -1,37 +1,29 @@
 import * as React from "react";
 import { AppContext } from "./helper/context"
+import { isEmptyObject } from "./helper/utils"
 import { GitHubIcon, LoadingSpinner, LinkedInIcon, MailIcon, PhoneIcon } from "./icons/Icons"
-import * as cvdataJSON from "./cvdata.json"
 import styles from "./App.module.css"
 import * as Types from "./App.types"
 
-const App = (): JSX.Element => {
+const App = ({ loadData }: { loadData: () => Types.TCVData | Types.TCVDataInitial }): JSX.Element => {
   const [cvData, setCvData] = React.useState<Types.TCVData | Types.TCVDataInitial>({})
 
   React.useEffect(() => {
-    const data: Types.TCVData = cvdataJSON // Load data, here via JSON
+    const data: Types.TCVData | Types.TCVDataInitial = loadData() // Dependency injection to test conditional loading
 
     setCvData((initial) => (
       {
         ...initial,
-        educationData: data.educationData,
-        jobsData: data.jobsData,
-        languagesData: data.languagesData,
-        personData: data.personData,
-        summaryData: data.summaryData,
+        ...data
       })
     )
-  }, [])
-
-  const isEmpty = (data: object) => {
-    return Object.keys(data).length === 0 && data.constructor === Object;
-  }
+  }, [loadData])
 
   return (
     <AppContext.Provider value={cvData}>
-      <div className={styles.App}>
-        <div className={styles.CVWrapper}>
-          {!isEmpty(cvData) ? <CVContent /> : <LoadingSpinner />}
+      <div className={styles.App} data-testid="app">
+        <div className={styles.CVWrapper} data-testid="cv-wrapper">
+          {!isEmptyObject(cvData) ? <CVContent /> : <LoadingSpinner />}
         </div>
       </div>
     </AppContext.Provider>

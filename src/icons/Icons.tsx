@@ -100,7 +100,7 @@ export const TrophyIcon = (): JSX.Element => {
 
 export const LoadingSpinner = (): JSX.Element => {
   return (
-    <div className={styles.spinner}>
+    <div className={styles.spinner} data-testid="loading-spinner">
       <div></div>
       <div></div>
       <div></div>
