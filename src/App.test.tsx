@@ -1,15 +1,57 @@
 import { render, screen } from '@testing-library/react';
-import App, { Education, Info, Language, Languages, School } from './App';
+import App, { CVContent, Education, Info, Language, Languages, School } from './App';
 import styles from "./App.module.css"
 import * as cvdataJSON from "./cvdata.json"
 import { AppContext } from "./helper/context"
 
-describe("abc", () => {
+describe("Component: 'App", () => {
   it('should render App and find Test', () => {
     render(<App />);
     const linkElement = screen.getByText(/Test/i);
     expect(linkElement).toBeInTheDocument();
   })
+})
+
+describe("Component: 'CVContent'", () => {
+  it("should have applied a styling to element", () => {
+    render(<CVContent />)
+
+    const wrapper = screen.getByTestId("cvcontent-wrapper")
+
+    expect(wrapper.className).toBe(styles.CVContent)
+  })
+})
+
+describe("Component: 'Header'", () => {
+  //
+})
+
+describe("Component: 'Person'", () => {
+  //
+})
+
+describe("Component: 'Contact'", () => {
+  //
+})
+
+describe("Component: 'Summary'", () => {
+  //
+})
+
+describe("Component: 'Experience'", () => {
+  //
+})
+
+describe("Component: 'Jobs'", () => {
+  //
+})
+
+describe("Component: 'Job'", () => {
+  //
+})
+
+describe("Component: 'TechStack'", () => {
+  //
 })
 
 describe("Component: 'Info'", () => {

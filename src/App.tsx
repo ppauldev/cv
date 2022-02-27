@@ -40,7 +40,7 @@ const App = (): JSX.Element => {
 
 export const CVContent = (): JSX.Element => {
   return (
-    <div className={styles.CVContent}>
+    <div className={styles.CVContent} data-testid="cvcontent-wrapper">
       <Header />
       <Summary />
       <Experience />
