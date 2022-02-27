@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import App, { CVContent, Education, Experience, Header, Info, Jobs, Language, Languages, School } from './App';
+import App, { CVContent, Education, Experience, Header, Info, Jobs, Language, Languages, School, Summary } from './App';
 import styles from "./App.module.css"
 import * as cvdataJSON from "./cvdata.json"
 import { AppContext } from "./helper/context"
@@ -41,11 +41,61 @@ describe("Component: 'Contact'", () => {
 })
 
 describe("Component: 'Summary'", () => {
-  //
+  it("should show the section heading text as h4", () => {
+    const testSummaryData = { summaryData: cvdataJSON.summaryData }
+    render(
+      <AppContext.Provider value={testSummaryData}>
+        <Summary />
+      </AppContext.Provider>
+    )
+
+    const h4 = screen.getByRole("heading", { level: 4 })
+
+    expect(h4.textContent).toBe("Profile Summary")
+  })
+
+  it("should show the headers thematic break (hr)", () => {
+    const testSummaryData = { summaryData: cvdataJSON.summaryData }
+    render(
+      <AppContext.Provider value={testSummaryData}>
+        <Summary />
+      </AppContext.Provider>
+    )
+
+    const hr = screen.getByRole("separator")
+
+    expect(hr).toBeDefined()
+  })
+
+  it("should have applied styling to elements", () => {
+    const testSummaryData = { summaryData: cvdataJSON.summaryData }
+    render(
+      <AppContext.Provider value={testSummaryData}>
+        <Summary />
+      </AppContext.Provider>
+    )
+
+    const section = screen.getByTestId("summary-section")
+
+    expect(section.className).toBe(styles.Summary)
+  })
+
+  it("should show correct summary data", () => {
+    const testSummaryData = { summaryData: cvdataJSON.summaryData }
+    render(
+      <AppContext.Provider value={testSummaryData}>
+        <Summary />
+      </AppContext.Provider>
+    )
+
+    const p = screen.getByTestId("summary-text")
+
+    expect(p.textContent).toBe(testSummaryData.summaryData.data.summary)
+  })
 })
 
 describe("Component: 'Experience'", () => {
-  it("should show the section heading text as h5", () => {
+  it("should show the section heading text as h4", () => {
     const testJobsData = { jobsData: cvdataJSON.jobsData }
     render(
       <AppContext.Provider value={testJobsData}>

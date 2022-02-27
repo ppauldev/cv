@@ -114,10 +114,10 @@ export const Summary = (): JSX.Element | null => {
   if (!summaryData || !("data" in summaryData)) return null
 
   return (
-    <section className={styles.Summary}>
+    <section className={styles.Summary} data-testid="summary-section">
       <h4>Profile Summary</h4>
       <hr />
-      <p>{summaryData.data.summary}</p>
+      <p data-testid="summary-text">{summaryData.data.summary}</p>
     </section>
   )
 }
