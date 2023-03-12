@@ -1,0 +1,256 @@
+{
+    "educationData": {
+        "label": "educationdata",
+        "data": [
+            {
+                "degree": "Web Development Bootcamp",
+                "name": "Ironhack",
+                "duration": "2020",
+                "tasks": [
+                    {
+                        "description": ""
+                    },
+                    {
+                        "description": ""
+                    },
+                    {
+                        "description": ""
+                    }
+                ]
+            },
+            {
+                "degree": "MSc in Material Science",
+                "name": "University Jena",
+                "duration": "2014 - 2017",
+                "tasks": [
+                    {
+                        "description": ""
+                    },
+                    {
+                        "description": ""
+                    },
+                    {
+                        "description": ""
+                    }
+                ]
+            },
+            {
+                "degree": "BEng in Industrial Engineering",
+                "name": "University of Applied Sciences Trier",
+                "duration": "2009 - 2013",
+                "tasks": [
+                    {
+                        "description": ""
+                    },
+                    {
+                        "description": ""
+                    },
+                    {
+                        "description": ""
+                    }
+                ]
+            }
+        ]
+    },
+    "jobsData": {
+        "label": "jobsdata",
+        "data": [
+            {
+                "title": "Software Engineer, Beta Systems DCI Software AG",
+                "tenure": "9/2022 - now",
+                "description": "Responsible for developing the product 'Beta Admin' used for document archiving, output management and log management",
+                "tasks": [
+                    {
+                        "description": "Planning, development and integration of software components and APIs in frontend (React.js, Redux, Bootstrap, HTML5, CSS3) in agile product team"
+                    },
+                    {
+                        "description": "Executing product roadmap in bi-weekly sprint cycles for the versions 5.2.0 to current by implementing user stories and addressing bugs"
+                    },
+                    {
+                        "description": "Refactoring of legacy codebase based on Clean Code patterns and principles"
+                    },
+                    {
+                        "description": "Setup of unit tests for legacy codebase (Jest, Jenkins) and acceptance tests for various operating systems (VirtualBox, Jenkins)"
+                    },
+                    {
+                        "description": "Setup and refactoring of Jenkins pipelines to execute CI/CD strategy for development and production environments"
+                    }
+                ],
+                "techstack": [
+                    "React",
+                    "Redux",
+                    "Bootstrap",
+                    "Node.js",
+                    "JavaScript (ES6+)",
+                    "TypeScript",
+                    "Jenkins"
+                ]
+            },
+            {
+                "title": "Full Stack Software Developer, ZeroWork GmbH (Startup, seed phase)",
+                "tenure": "5/2022 - 8/2022",
+                "description": "Responsible for planning and developing ZeroWork's marketplace and app",
+                "tasks": [
+                    {
+                        "description": "Planning, development and integration of software components and APIs in frontend (React.js, Redux, Material UI, HTML5, CSS3) and backend (Python, Django, PostgreSQL) in agile product team"
+                    },
+                    {
+                        "description": "Evaluation, validation and implementation of product roadmap for automation core (Playwright) to drive No-Code logic of app and marketplace"
+                    },
+                    {
+                        "description": "Migration of automation core codebase from Python to TypeScript"
+                    },
+                    {
+                        "description": "Integration of Stripe Payments into product ecosystem (app, marketplace, backend)"
+                    },
+                    {
+                        "description": "Integration of remote scheduler for app and marketplace (AWS, Redis)"
+                    },
+                    {
+                        "description": "Ownership and execution of Mac release process"
+                    },
+                    {
+                        "description": "Quality assurance and code reviews based on Clean Code patterns and principles"
+                    }
+                ],
+                "techstack": [
+                    "React",
+                    "Next.js",
+                    "Redux",
+                    "Material UI",
+                    "Node.js",
+                    "Electron.js",
+                    "JavaScript (ES6+)",
+                    "TypeScript",
+                    "Python",
+                    "Docker",
+                    "AWS"
+                ]
+            },
+            {
+                "title": "Software Engineer, ZkSystems GmbH (Startup, seed phase)",
+                "tenure": "4/2021 - 4/2022",
+                "description": "Responsible for planning and developing the app (cross-platform) and automation core for the ZeroWork.io launch",
+                "tasks": [
+                    {
+                        "description": "Planning, development and integration of software components and APIs in frontend (React.js, Redux, Material UI, HTML5, CSS3) in agile product team"
+                    },
+                    {
+                        "description": "Evaluation, validation and implementation of product roadmap for automation core as greenfield project (Python, Selenium, RPA Framework) to drive No-Code logic of app"
+                    },
+                    {
+                        "description": "Cross-platform development of core product (Electron.js, Node.js, Webpack)"
+                    },
+                    {
+                        "description": "Ownership and execution of Mac release process"
+                    },
+                    {
+                        "description": "Integration of on-premise and cloud queue management system for workflow execution in backend and app (AWS SQS, Redis, Bull)"
+                    },
+                    {
+                        "description": "Integration of logging and analytics in backend and frontend of the user journey (AWS S3, Mixpanel)"
+                    },
+                    {
+                        "description": "Quality assurance and code reviews based on Clean Code patterns and principles"
+                    },
+                    {
+                        "description": "Initial setup and implementation of unit tests within the software development lifecycle (GitLab CI, Git) to reach a test coverage of over 50%"
+                    },
+                    {
+                        "description": "Planning and validation of project 'ZeroWork.io'"
+                    }
+                ],
+                "techstack": [
+                    "React",
+                    "Redux",
+                    "Material UI",
+                    "Node.js",
+                    "Electron.js",
+                    "JavaScript (ES6+)",
+                    "Python",
+                    "Selenium",
+                    "AWS"
+                ]
+            },
+            {
+                "title": "Web Developer, auteon GmbH (Startup, PoC phase)",
+                "tenure": "7/2020 - 3/2021",
+                "description": "Responsible for planning and developing auteons article comparison mechanism via browser automation and supplier APIs",
+                "tasks": [
+                    {
+                        "description": "Planning, development and integration of software components and APIs in agile product development on strategic and operative level for backend"
+                    },
+                    {
+                        "description": "Testing, maintaining and optimizing existing software components to increase robustness, correctness and speed for core product"
+                    },
+                    {
+                        "description": "Coordination, support and code review for 3 working students within the automation team"
+                    },
+                    {
+                        "description": "Migration of monolithic legacy code to modular automation core with Clean Code approach"
+                    }
+                ],
+                "techstack": [
+                    "Vue",
+                    "Node.js",
+                    "Electron.js",
+                    "JavaScript (ES6+)",
+                    "TypeScript",
+                    "GraphQL",
+                    "Hasura",
+                    "PostgreSQL"
+                ]
+            },
+            {
+                "title": "Technical Account Manager, Hilti AG",
+                "tenure": "11/2017 - 1/2020",
+                "description": "Responsible for 700+ industrial clients (SME) regarding consulting and direct sales in defined territory in Berlin area",
+                "tasks": [
+                    {
+                        "description": "Build, care and develop customer relations in accordance to company targets and cost efficient resourcing"
+                    },
+                    {
+                        "description": "Product presentation, delivering technical workshops and consulting customers with company's systematic sales approach"
+                    },
+                    {
+                        "description": "Qualitative and quantitive market research in cooperation with leadership team and technical task force to address market opportunity"
+                    },
+                    {
+                        "description": "Admission to Hilti's Top Club Germany by the general management for exceeding strategic company targets for 2 consecutive years based on customer loyalty, revenue growth and execution of companys long-term growth initiatives"
+                    }
+                ]
+            }
+        ]
+    },
+    "languagesData": {
+        "label": "languagesdata",
+        "data": [
+            {
+                "language": "German",
+                "level": "native"
+            },
+            {
+                "language": "English",
+                "level": "C1"
+            }
+        ]
+    },
+    "personData": {
+        "label": "persondata",
+        "data": {
+            "fullname": "Phillip Paul",
+            "role": "Software Developer",
+            "email": "phillip.paul@t-online.de",
+            "emailsubject": "Hi Phillip!",
+            "phone": "+49 176 3177 8623",
+            "linkedin": "linkedin.com/in/phillippaul",
+            "github": "github.com/ppauldev"
+        }
+    },
+    "summaryData": {
+        "label": "summarydata",
+        "data": {
+            "summary": "Full stack software developer with an engineering background who relies on a passion for learning, acute attention to detail and effective communication to deliver exceptional results. My mission is to help purposeful tech companies realize their vision of the future by working pragmatically, thoroughly and business-oriented."
+        }
+    }
+}
