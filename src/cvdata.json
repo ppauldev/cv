@@ -5,17 +5,50 @@
       {
         "degree": "Web Development Bootcamp",
         "name": "Ironhack",
-        "duration": "2020"
+        "duration": "2020",
+        "tasks": [
+          {
+            "description": ""
+          },
+          {
+            "description": ""
+          },
+          {
+            "description": ""
+          }
+        ]
       },
       {
         "degree": "MSc in Material Science",
         "name": "University Jena",
-        "duration": "2014 - 2017"
+        "duration": "2014 - 2017",
+        "tasks": [
+          {
+            "description": ""
+          },
+          {
+            "description": ""
+          },
+          {
+            "description": ""
+          }
+        ]
       },
       {
         "degree": "BEng in Industrial Engineering",
         "name": "University of Applied Sciences Trier",
-        "duration": "2009 - 2013"
+        "duration": "2009 - 2013",
+        "tasks": [
+          {
+            "description": ""
+          },
+          {
+            "description": ""
+          },
+          {
+            "description": ""
+          }
+        ]
       }
     ]
   },
@@ -23,39 +56,119 @@
     "label": "jobsdata",
     "data": [
       {
-        "title": "Software Engineer, ZkSystems GmbH (Startup, seed phase)",
-        "tenure": "4/2021 - now",
-        "description": "Responsible for planning and developing the app (cross-platform) and automation core for the ZeroWork.io launch",
+        "title": "Software Engineer, Beta Systems DCI Software AG",
+        "tenure": "9/2022 - now",
+        "description": "Responsible for developing the product 'Beta Admin' used for document archiving, output management and log management",
         "tasks": [
           {
-            "description": "Planning, development and integration of software components and APIs in agile product development on strategic and operative level"
+            "description": "Planning, development and integration of software components and APIs in frontend (React.js, Redux, Bootstrap, HTML5, CSS3) in agile product team"
           },
           {
-            "description": "Evaluation, validation and implementation of product feature roadmap for app and automation core including logging and analytics (user journey)"
+            "description": "Executing product roadmap in bi-weekly sprint cycles for the versions 5.2.0 to current by implementing user stories and addressing bugs"
           },
           {
-            "description": "Integration of Stripe payments system in backend, app and marketplace utilizing REST API and Webhooks"
+            "description": "Refactoring of legacy codebase based on Clean Code patterns and principles"
           },
           {
-            "description": "Integration of queue management system for workflow execution in backend and app utilizing AWS SQS, Redis and Bull QM"
+            "description": "Setup of unit tests for legacy codebase (Jest, Jenkins) and acceptance tests for various operating systems (VirtualBox, Jenkins)"
           },
           {
-            "description": "Built automation core (greenfield project) in Python to drive No-Code building logic of app"
-          },
-          {
-            "description": "Migration of Python code base to TypeScript to account for future requirements on performance, scalability and maintainability"
+            "description": "Setup and refactoring of Jenkins pipelines to execute CI/CD strategy for development and production environments"
           }
         ],
         "techstack": [
           "React",
-          "Next JS",
+          "Redux",
+          "Bootstrap",
+          "Node.js",
+          "JavaScript (ES6+)",
+          "TypeScript",
+          "Jenkins"
+        ]
+      },
+      {
+        "title": "Full Stack Software Developer, ZeroWork GmbH (Startup, seed phase)",
+        "tenure": "5/2022 - 8/2022",
+        "description": "Responsible for planning and developing ZeroWork's marketplace and app",
+        "tasks": [
+          {
+            "description": "Planning, development and integration of software components and APIs in frontend (React.js, Redux, Material UI, HTML5, CSS3) and backend (Python, Django, PostgreSQL) in agile product team"
+          },
+          {
+            "description": "Evaluation, validation and implementation of product roadmap for automation core (Playwright) to drive No-Code logic of app and marketplace"
+          },
+          {
+            "description": "Migration of automation core codebase from Python to TypeScript"
+          },
+          {
+            "description": "Integration of Stripe Payments into product ecosystem (app, marketplace, backend)"
+          },
+          {
+            "description": "Integration of remote scheduler for app and marketplace (AWS, Redis)"
+          },
+          {
+            "description": "Ownership and execution of Mac release process"
+          },
+          {
+            "description": "Quality assurance and code reviews based on Clean Code patterns and principles"
+          }
+        ],
+        "techstack": [
+          "React",
+          "Next.js",
+          "Redux",
+          "Material UI",
           "Node.js",
           "Electron.js",
           "JavaScript (ES6+)",
           "TypeScript",
           "Python",
-          "Django",
-          "PostgreSQL",
+          "Docker",
+          "AWS"
+        ]
+      },
+      {
+        "title": "Software Engineer, ZkSystems GmbH (Startup, seed phase)",
+        "tenure": "4/2021 - 4/2022",
+        "description": "Responsible for planning and developing the app (cross-platform) and automation core for the ZeroWork.io launch",
+        "tasks": [
+          {
+            "description": "Planning, development and integration of software components and APIs in frontend (React.js, Redux, Material UI, HTML5, CSS3) in agile product team"
+          },
+          {
+            "description": "Evaluation, validation and implementation of product roadmap for automation core as greenfield project (Python, Selenium, RPA Framework) to drive No-Code logic of app"
+          },
+          {
+            "description": "Cross-platform development of core product (Electron.js, Node.js, Webpack)"
+          },
+          {
+            "description": "Ownership and execution of Mac release process"
+          },
+          {
+            "description": "Integration of on-premise and cloud queue management system for workflow execution in backend and app (AWS SQS, Redis, Bull)"
+          },
+          {
+            "description": "Integration of logging and analytics in backend and frontend of the user journey (AWS S3, Mixpanel)"
+          },
+          {
+            "description": "Quality assurance and code reviews based on Clean Code patterns and principles"
+          },
+          {
+            "description": "Initial setup and implementation of unit tests within the software development lifecycle (GitLab CI, Git) to reach a test coverage of over 50%"
+          },
+          {
+            "description": "Planning and validation of project 'ZeroWork.io'"
+          }
+        ],
+        "techstack": [
+          "React",
+          "Redux",
+          "Material UI",
+          "Node.js",
+          "Electron.js",
+          "JavaScript (ES6+)",
+          "Python",
+          "Selenium",
           "AWS"
         ]
       },

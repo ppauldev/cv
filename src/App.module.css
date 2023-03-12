@@ -1,6 +1,6 @@
 body {
   background-color: whitesmoke;
-  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   margin: 0;
   padding: 0;
 }
@@ -12,7 +12,7 @@ body {
 }
 
 .CVWrapper {
-  height: 29.6cm;
+  min-height: 29.6cm;
   width: 21cm;
 }
 
@@ -21,7 +21,6 @@ body {
   background-color: white;
   display: flex;
   flex-direction: column;
-  height: 100%;
   width: 100%;
 }
 
@@ -29,7 +28,7 @@ hr {
   margin-top: 1rem;
   margin-bottom: 1rem;
   border: 0;
-  border-top: 1px solid rgba(0,0,0,.1);
+  border-top: 1px solid rgba(0, 0, 0, .1);
 }
 
 .Header {
@@ -37,7 +36,7 @@ hr {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  height: 10%;
+  height: 110px;
   width: 100%;
 }
 
@@ -84,18 +83,19 @@ hr {
   padding-right: 40px;
 }
 
-.ContactDetails > span {
+.ContactDetails>span {
   align-items: center;
   display: flex;
   flex-direction: row;
   font-size: 0.9em;
 }
 
-.ContactDetails > span:not(:first-child) {
+.ContactDetails>span:not(:first-child) {
   padding-top: 6px;
 }
 
-.ContactDetails a, .ContactDetails p {
+.ContactDetails a,
+.ContactDetails p {
   color: white;
   font-size: 0.9em;
   margin: 0;
@@ -108,22 +108,21 @@ hr {
 
 .Summary {
   color: #212529;
-  height: 12%;
+  height: 136px;
   width: 90%;
 }
 
-.Summary > h4 {
+.Summary>h4 {
   margin: 0;
   padding-top: 30px;
 }
 
-.Summary > p {
+.Summary>p {
   font-size: 0.8em;
   text-align: justify;
 }
 
 .Experience {
-  height: 65%;
   width: 90%;
 }
 
@@ -139,8 +138,13 @@ hr {
   flex-direction: row;
   font-size: 0.7em;
   justify-content: center;
-  padding-bottom: 6px; /* Increasing this might result in unexpected line break on print */
+  padding-bottom: 12px;
+  /* Increasing this might result in unexpected line break on print */
   width: 96%;
+}
+
+.JobOnNextPage {
+  break-before: page;
 }
 
 .JobDetails {
@@ -163,7 +167,7 @@ hr {
   width: 26%;
 }
 
-.JobTechStack > p {
+.JobTechStack>p {
   font-weight: bold;
   margin: 0;
 }
@@ -188,9 +192,10 @@ hr {
 
 .Info {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
-  height: 13%;
+  margin-block-end: 1.33em;
+  margin-block-start: 1.33em;
   width: 90%;
 }
 
@@ -199,7 +204,18 @@ hr {
   width: 70%;
 }
 
-.Education > h5 {
+.Education>h5 {
+  font-size: 1em;
+  margin: 0;
+  padding: 0;
+}
+
+.EducationMultiPage {
+  height: 100%;
+  width: 96%;
+}
+
+.EducationMultiPage>h5 {
   font-size: 1em;
   margin: 0;
   padding: 0;
@@ -211,16 +227,45 @@ hr {
   justify-content: flex-start;
 }
 
+.SchoolsMultiPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .SchoolDetails {
   display: flex;
   flex-direction: column;
   width: 30%;
 }
 
-.SchoolDetails > span {
+.SchoolDetailsMultiPage {
+  display: flex;
+  flex-direction: column;
+  width: 96%;
+}
+
+.SchoolDetails>span {
   font-size: 0.7em;
   padding: 2px;
   text-align: center;
+}
+
+.SchoolDetailsMultiPage>span:nth-child(1) {
+  font-size: 0.7em;
+  padding: 2px;
+}
+
+.SchoolDetailsMultiPage>span:nth-child(2) {
+  color: grey;
+  font-size: 0.6em;
+  font-weight: 300;
+  padding: 2px;
+}
+
+.SchoolDetailsMultiPage>ul {
+  font-size: 0.7em;
+  padding-bottom: 12px;
 }
 
 .Languages {
@@ -228,7 +273,18 @@ hr {
   width: 30%;
 }
 
-.Languages > h5 {
+.Languages>h5 {
+  font-size: 1em;
+  margin: 0;
+  padding: 0;
+}
+
+.LanguagesMultiPage {
+  height: 100%;
+  width: 96%;
+}
+
+.LanguagesMultiPage>h5 {
   font-size: 1em;
   margin: 0;
   padding: 0;
@@ -250,6 +306,13 @@ hr {
   display: flex;
   flex-direction: column;
   width: 44%;
+}
+
+.LanguageDetailsMultiPage {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 12%;
 }
 
 .bold {
@@ -305,5 +368,16 @@ hr {
 
   100% {
     transform: rotate(360deg);
+  }
+}
+
+@media print {
+  body {
+    background-color: white;
+  }
+
+  .JobOnNextPage {
+    break-before: page;
+    margin-top: 4em;
   }
 }

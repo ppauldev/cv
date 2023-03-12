@@ -5,6 +5,8 @@ import { GitHubIcon, LoadingSpinner, LinkedInIcon, MailIcon, PhoneIcon } from ".
 import styles from "./App.module.css"
 import * as Types from "./App.types"
 
+const DIN_A4_HEIGHT_IN_PX = 1118.74
+
 const App = ({ loadData }: { loadData: () => Types.TCVData | Types.TCVDataInitial }): JSX.Element => {
   const [cvData, setCvData] = React.useState<Types.TCVData | Types.TCVDataInitial>({})
 
@@ -139,6 +141,10 @@ export const Jobs = (): JSX.Element | null => {
 }
 
 export const Job = ({ data }: { data: Types.TJob }): JSX.Element => {
+  const ref = React.useRef(null)
+
+  const [shouldAddPageBreak, setShouldAddPageBreak] = React.useState(false)
+
   const classJobDetails: string = data?.techstack ? styles.JobDetails : styles.JobDetailsFullWidth
 
   const tasks: JSX.Element[] = data.tasks.map((task: Types.TJobTask, index: number): JSX.Element => {
@@ -147,8 +153,18 @@ export const Job = ({ data }: { data: Types.TJob }): JSX.Element => {
     )
   })
 
+  React.useEffect(() => {
+    if (!ref.current) return;
+
+    const body = document.body.getBoundingClientRect()
+    const job = (ref.current as Element).getBoundingClientRect()
+    const offsetTop = job.top - body.top
+
+    setShouldAddPageBreak(offsetTop < DIN_A4_HEIGHT_IN_PX && offsetTop + job.height >= DIN_A4_HEIGHT_IN_PX)
+  }, [ref])
+
   return (
-    <div className={styles.Job} data-testid="job-wrapper">
+    <div className={`${styles.Job} ${shouldAddPageBreak ? styles.JobOnNextPage : ''}`} data-testid="job-wrapper" ref={ref}>
       <div className={classJobDetails} data-testid="job-details">
         <span className={styles.bold} data-testid="job-title">{data.title}</span>
         <span className={styles.light} data-testid="job-tenure">{data.tenure}</span>
@@ -182,11 +198,31 @@ export const TechStack = ({ stack }: { stack: string[] | undefined }): JSX.Eleme
 }
 
 export const Info = (): JSX.Element => {
+  const [isMultiPage, setIsMultiPage] = React.useState(false)
+
+  React.useEffect(() => {
+    const body = document.body.getBoundingClientRect()
+    setIsMultiPage(body.height > DIN_A4_HEIGHT_IN_PX)
+  }, [])
+
   return (
-    <section className={styles.Info} data-testid="info-section">
-      <Education />
-      <Languages />
-    </section>
+    <>
+      {isMultiPage ? (
+        <>
+          <section className={styles.Info} data-testid="education-section-multipage">
+            <EducationMultiPage />
+          </section>
+          <section className={styles.Info} data-testid="language-section-multipage">
+            <LanguagesMultiPage />
+          </section>
+        </>
+      ) : (
+        <section className={styles.Info} data-testid="info-section">
+          <Education />
+          <Languages />
+        </section>
+      )}
+    </>
   )
 }
 
@@ -208,12 +244,46 @@ export const Education = (): JSX.Element | null => {
   )
 }
 
+export const EducationMultiPage = (): JSX.Element | null => {
+  const { educationData } = React.useContext<Types.TCVData | { educationData?: Types.TEducationData }>(AppContext)
+
+  if (!educationData || !("data" in educationData)) return null
+
+  const schools: JSX.Element[] = educationData.data.map((schoolData: Types.TSchool, index: number): JSX.Element => {
+    return <SchoolMultiPage data={schoolData} key={index} />
+  })
+
+  return (
+    <section className={styles.EducationMultiPage} data-testid="education-multipage-section">
+      <h5>Education</h5>
+      <hr />
+      <div className={styles.SchoolsMultiPage} data-testid="schools">{schools}</div>
+    </section>
+  )
+}
+
 export const School = ({ data }: { data: Types.TSchool }): JSX.Element => {
   return (
     <div className={styles.SchoolDetails} data-testid="school-details">
       <span className={styles.bold} data-testid="school-degree">{data.degree}</span>
       <span data-testid="school-name">{data.name}</span>
       <span data-testid="school-duration">{data.duration}</span>
+    </div>
+  )
+}
+
+export const SchoolMultiPage = ({ data }: { data: Types.TSchool }): JSX.Element => {
+  // const tasks: JSX.Element[] = data.tasks.map((task: Types.TJobTask, index: number): JSX.Element => {
+  //   return (
+  //     <li key={index}>{task.description}</li>
+  //   )
+  // })
+
+  return (
+    <div className={styles.SchoolDetailsMultiPage} data-testid="school-details-multipage">
+      <span className={styles.bold} data-testid="school-degree">{data.degree}, {data.name}</span>
+      <span style={{ paddingBottom: "12px" }} data-testid="school-duration">{data.duration}</span>
+      {/* <ul data-testid="school-tasks">{tasks}</ul> */}
     </div>
   )
 }
@@ -236,9 +306,36 @@ export const Languages = (): JSX.Element | null => {
   )
 }
 
+export const LanguagesMultiPage = (): JSX.Element | null => {
+  const { languagesData } = React.useContext<Types.TCVData | { languagesData?: Types.TLanguagesData }>(AppContext)
+
+  if (!languagesData || !("data" in languagesData)) return null
+
+  const languages: JSX.Element[] = languagesData.data.map((language: Types.TLanguage, index: number) => {
+    return <LanguageMultiPage data={language} key={index} />
+  })
+
+  return (
+    <section className={styles.LanguagesMultiPage} data-testid="languages-section">
+      <h5>Languages</h5>
+      <hr />
+      <div className={styles.LanguagesDetails} data-testid="languages-details">{languages}</div>
+    </section>
+  )
+}
+
 export const Language = ({ data }: { data: Types.TLanguage }): JSX.Element => {
   return (
     <div className={styles.LanguageDetails} data-testid="language-details">
+      <span className={styles.bold} data-testid="language">{data.language}</span>
+      <span data-testid="language-level">{data.level}</span>
+    </div>
+  )
+}
+
+export const LanguageMultiPage = ({ data }: { data: Types.TLanguage }): JSX.Element => {
+  return (
+    <div className={styles.LanguageDetailsMultiPage} data-testid="language-details">
       <span className={styles.bold} data-testid="language">{data.language}</span>
       <span data-testid="language-level">{data.level}</span>
     </div>
