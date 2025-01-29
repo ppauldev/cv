@@ -9,7 +9,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "release": "npm run build && git add build -f && git commit -m \"Release build\" && git push origin `git subtree split --prefix build main`:release --force",
+    "release": "npm run build && git add build -f && git commit -m \"Release build\" && git subtree split --prefix build -b temp-release && git push origin temp-release:release --force && git reset HEAD~1 && git branch -D temp-release",
     "test": "cross-env CI=true react-scripts test --env=jsdom",
     "type-check": "tsc --noEmit",
     "prepare": "husky install"
