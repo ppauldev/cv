@@ -56,8 +56,47 @@
     "label": "jobsdata",
     "data": [
       {
+        "title": "Technical Product Manager, Beta Systems IAM Software AG",
+        "tenure": "10/2023 - now",
+        "description": "Responsible for strategic product development and management of the 'Garancy' product family used for full-scale Identity and Access Management for enterprises",
+        "tasks": [
+          {
+            "description": "Agile product ownership for products: 'Portal' (Web Client), 'Access Intelligence Manager' (Analytics), 'Process Center' (Workflow Automation) and 'Process Center Workflows' (Service Offering)"
+          },
+          {
+            "description": "Development of product strategy, mission and vision for new 'Garancy' brand within the management team (7 people)"
+          },
+          {
+            "description": "Project lead for new products & service offerings until launch with internal and external resources for: 'Access Insights' (Role Modelling), 'Benchmarks' (Test Automation), 'Keycloak Integration' (Identity Provider/Broker)"
+          },
+          {
+            "description": "Project lead for internal process optimizations and automation within the product development realm (QA, Support, Doc, Dev, PM, Services) for: 'SBOM Tooling' & 'FOSS-omat' (Vulnerability Management), 'Noctua Extended' (Container Deployments), 'Garancy Tests' (Containerized Test Automation)"
+          },
+          {
+            "description": "External (customers, prospects, partners, analysts) & internal stakeholder management via presentations, demos, workshops, tender support"
+          },
+          {
+            "description": "Prototyping and research for new solutions in areas of AI, automation, third-party integrations"
+          }
+        ],
+        "techstack": [
+          "Docker",
+          "Gitlab CI",
+          "Node.js",
+          "Python",
+          "Cursor",
+          "Claude",
+          "ChatGPT",
+          "Cypress",
+          "Playwright",
+          "Angular",
+          "Next.js",
+          "Keycloak"
+        ]
+      },
+      {
         "title": "Software Engineer, Beta Systems DCI Software AG",
-        "tenure": "9/2022 - now",
+        "tenure": "9/2022 - 10/2023",
         "description": "Responsible for developing the product 'Beta Admin' used for document archiving, output management and log management",
         "tasks": [
           {
@@ -239,8 +278,8 @@
     "label": "persondata",
     "data": {
       "fullname": "Phillip Paul",
-      "role": "Software Developer",
-      "email": "phillip.paul@t-online.de",
+      "role": "Product Manager",
+      "email": "phillip.paul@magenta.de",
       "emailsubject": "Hi Phillip!",
       "phone": "+49 176 3177 8623",
       "linkedin": "linkedin.com/in/phillippaul",
@@ -250,7 +289,7 @@
   "summaryData": {
     "label": "summarydata",
     "data": {
-      "summary": "Full stack software developer with an engineering background who relies on a passion for learning, acute attention to detail and effective communication to deliver exceptional results. My mission is to help purposeful tech companies realize their vision of the future by working pragmatically, thoroughly and business-oriented."
+      "summary": "Technical Product Manager with an engineering background who likes to build excellent software with great people. My mission is to help purposeful tech companies realize their vision of the future by working pragmatically, thoroughly and business-oriented."
     }
   }
 }
