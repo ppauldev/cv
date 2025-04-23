@@ -149,7 +149,7 @@ export const Job = ({ data }: { data: Types.TJob }): JSX.Element => {
 
   const tasks: JSX.Element[] = data.tasks.map((task: Types.TJobTask, index: number): JSX.Element => {
     return (
-      <li key={index}>{task.description}</li>
+      <li key={index}><span className={styles.bold}>{task.keyword ? `${task.keyword}: ` : ""}</span> {task.description}</li>
     )
   })
 

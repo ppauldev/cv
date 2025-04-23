@@ -56,27 +56,33 @@
     "label": "jobsdata",
     "data": [
       {
-        "title": "Technical Product Manager, Beta Systems IAM Software AG",
+        "title": "Product Manager, Beta Systems IAM Software AG",
         "tenure": "10/2023 - now",
-        "description": "Responsible for strategic product development and management of the 'Garancy' product family used for full-scale Identity and Access Management for enterprises",
+        "description": "Drove strategic development and management of the enterprise-grade Identity and Access Management (IAM) product suite 'Garancy', delivering innovative solutions and operational efficiencies for global organizations.",
         "tasks": [
           {
-            "description": "Agile product ownership for products: 'Portal' (Web Client), 'Access Intelligence Manager' (Analytics), 'Process Center' (Workflow Automation) and 'Process Center Workflows' (Service Offering)"
+            "keyword": "Agile Product Ownership",
+            "description": "Managed the full product lifecycle for a suite of IAM solutions, including web-based client interfaces, analytics platforms, workflow automation tools, and service offerings, ensuring scalable, user-focused outcomes."
           },
           {
-            "description": "Development of product strategy, mission and vision for new 'Garancy' brand within the management team (7 people)"
+            "keyword": "Strategic Leadership",
+            "description": "Partnered with a 7-member leadership team to craft and execute the product strategy, mission, and vision for a rebranded IAM portfolio, aligning with enterprise security and compliance needs."
           },
           {
-            "description": "Project lead for new products & service offerings until launch with internal and external resources for: 'Access Insights' (Role Modelling), 'Benchmarks' (Test Automation), 'Keycloak Integration' (Identity Provider/Broker)"
+            "keyword": "Project Leadership",
+            "description": "Directed cross-functional teams to launch advanced IAM features, such as role-based access modeling, automated testing frameworks, and identity provider integrations, achieving on-time delivery and strong market adoption."
           },
           {
-            "description": "Project lead for internal process optimizations and automation within the product development realm (QA, Support, Doc, Dev, PM, Services) for: 'SBOM Tooling' & 'FOSS-omat' (Vulnerability Management), 'Noctua Extended' (Container Deployments), 'Garancy Tests' (Containerized Test Automation)"
+            "keyword": "Process Optimization",
+            "description": "Implemented automation and process improvements across QA, support, documentation, and development teams, leveraging containerized deployments and vulnerability management tools."
           },
           {
-            "description": "External (customers, prospects, partners, analysts) & internal stakeholder management via presentations, demos, workshops, tender support"
+            "keyword": "Stakeholder Management",
+            "description": "Built and nurtured relationships with customers, partners, and analysts through compelling presentations, demos, and workshops, driving brand recognition and securing strategic partnerships."
           },
           {
-            "description": "Prototyping and research for new solutions in areas of AI, automation, third-party integrations"
+            "keyword": "Innovation & Research",
+            "description": "Led prototyping and research in AI-driven automation and third-party integrations, enhancing product functionality and maintaining a competitive edge."
           }
         ],
         "techstack": [
@@ -97,22 +103,27 @@
       {
         "title": "Software Engineer, Beta Systems DCI Software AG",
         "tenure": "9/2022 - 10/2023",
-        "description": "Responsible for developing the product 'Beta Admin' used for document archiving, output management and log management",
+        "description": "Developed and enhanced 'Beta Admin,' an enterprise solution for document archiving, output management, and log management, delivering robust software components and streamlined processes in a collaborative, agile environment.",
         "tasks": [
           {
-            "description": "Planning, development and integration of software components and APIs in frontend (React.js, Redux, Bootstrap, HTML5, CSS3) in agile product team"
+            "keyword": "Frontend Development",
+            "description": "Designed and integrated responsive software components and APIs using React.js, Redux, Bootstrap, HTML5, and CSS3, enhancing user experience and functionality within an agile product team."
           },
           {
-            "description": "Executing product roadmap in bi-weekly sprint cycles for the versions 5.2.0 to current by implementing user stories and addressing bugs"
+            "keyword": "Agile Execution",
+            "description": "Executed product roadmap through bi-weekly sprints (versions 5.2.0 to current), implementing user stories and resolving bugs to ensure timely delivery of high-quality releases."
           },
           {
-            "description": "Refactoring of legacy codebase based on Clean Code patterns and principles"
+            "keyword": "Codebase Modernization",
+            "description": "Refactored legacy code following Clean Code principles, improving maintainability, readability, and performance of the 'Beta Admin' platform."
           },
           {
-            "description": "Setup of unit tests for legacy codebase (Jest, Jenkins) and acceptance tests for various operating systems (VirtualBox, Jenkins)"
+            "keyword": "Testing Infrastructure",
+            "description": "Established comprehensive unit testing (Jest) and cross-platform acceptance testing (VirtualBox) frameworks, increasing code reliability and reducing post-release defects."
           },
           {
-            "description": "Setup and refactoring of Jenkins pipelines to execute CI/CD strategy for development and production environments"
+            "keyword": "CI/CD Optimization",
+            "description": "Configured and optimized Jenkins pipelines to support efficient CI/CD workflows, accelerating development and production deployment cycles."
           }
         ],
         "techstack": [
@@ -128,28 +139,35 @@
       {
         "title": "Full Stack Software Developer, ZeroWork GmbH (Startup, seed phase)",
         "tenure": "5/2022 - 8/2022",
-        "description": "Responsible for planning and developing ZeroWork's marketplace and app",
+        "description": "Drove the planning and development of ZeroWork’s marketplace and app, delivering a scalable no-code automation platform in a fast-paced, agile startup environment.",
         "tasks": [
           {
-            "description": "Planning, development and integration of software components and APIs in frontend (React.js, Redux, Material UI, HTML5, CSS3) and backend (Python, Django, PostgreSQL) in agile product team"
+            "keyword": "Full Stack Development",
+            "description": "Designed and integrated responsive frontend (React.js, Redux, Material UI, HTML5, CSS3) and backend (Python, Django, PostgreSQL) components and APIs, building a seamless marketplace and app ecosystem."
           },
           {
-            "description": "Evaluation, validation and implementation of product roadmap for automation core (Playwright) to drive No-Code logic of app and marketplace"
+            "keyword": "Automation Core Development",
+            "description": "Evaluated and implemented the product roadmap for the no-code automation core using Playwright, enabling robust app and marketplace functionality."
           },
           {
-            "description": "Migration of automation core codebase from Python to TypeScript"
+            "keyword": "Codebase Migration",
+            "description": "Led the migration of the automation core from Python to TypeScript, enhancing performance and maintainability."
           },
           {
-            "description": "Integration of Stripe Payments into product ecosystem (app, marketplace, backend)"
+            "keyword": "Payment Integration",
+            "description": "Integrated Stripe Payments across the app, marketplace, and backend, ensuring secure and efficient transaction processing."
           },
           {
-            "description": "Integration of remote scheduler for app and marketplace (AWS, Redis)"
+            "keyword": "Scheduler Integration",
+            "description": "Developed and integrated a remote scheduler using AWS and Redis, optimizing task automation for the platform."
           },
           {
-            "description": "Ownership and execution of Mac release process"
+            "keyword": "Release Ownership",
+            "description": "Owned and executed the Mac release process, ensuring a smooth and timely product launch."
           },
           {
-            "description": "Quality assurance and code reviews based on Clean Code patterns and principles"
+            "keyword": "Quality Assurance",
+            "description": "Conducted code reviews and enforced Clean Code principles, improving code quality and reducing technical debt."
           }
         ],
         "techstack": [
@@ -169,34 +187,43 @@
       {
         "title": "Software Engineer, ZkSystems GmbH (Startup, seed phase)",
         "tenure": "4/2021 - 4/2022",
-        "description": "Responsible for planning and developing the app (cross-platform) and automation core for the ZeroWork.io launch",
+        "description": "Led the planning and development of the cross-platform app and automation core for the ZeroWork.io launch, delivering a scalable no-code automation platform in a dynamic, agile startup environment.",
         "tasks": [
           {
-            "description": "Planning, development and integration of software components and APIs in frontend (React.js, Redux, Material UI, HTML5, CSS3) in agile product team"
+            "keyword": "Frontend Development",
+            "description": "Designed and integrated responsive frontend components and APIs using React.js, Redux, Material UI, HTML5, and CSS3, enhancing user experience within an agile product team."
           },
           {
-            "description": "Evaluation, validation and implementation of product roadmap for automation core as greenfield project (Python, Selenium, RPA Framework) to drive No-Code logic of app"
+            "keyword": "Automation Core Development",
+            "description": "Spearheaded the greenfield development of the no-code automation core using Python, Selenium, and an RPA framework, driving the product roadmap and enabling robust app functionality."
           },
           {
-            "description": "Cross-platform development of core product (Electron.js, Node.js, Webpack)"
+            "keyword": "Cross-Platform Development",
+            "description": "Built the core product for cross-platform compatibility using Electron.js, Node.js, and Webpack, ensuring seamless performance across operating systems."
           },
           {
-            "description": "Ownership and execution of Mac release process"
+            "keyword": "Release Ownership",
+            "description": "Owned and executed the Mac release process, delivering a successful product launch on schedule."
           },
           {
-            "description": "Integration of on-premise and cloud queue management system for workflow execution in backend and app (AWS SQS, Redis, Bull)"
+            "keyword": "Queue Management Integration",
+            "description": "Developed and integrated on-premise and cloud-based queue management systems using AWS SQS, Redis, and Bull, optimizing workflow execution for the app and backend."
           },
           {
-            "description": "Integration of logging and analytics in backend and frontend of the user journey (AWS S3, Mixpanel)"
+            "keyword": "Analytics & Logging",
+            "description": "Implemented logging and user journey analytics across frontend and backend using AWS S3 and Mixpanel, enhancing product insights and performance tracking."
           },
           {
-            "description": "Quality assurance and code reviews based on Clean Code patterns and principles"
+            "keyword": "Quality Assurance",
+            "description": "Conducted code reviews and enforced Clean Code principles, improving code maintainability and reducing technical debt."
           },
           {
-            "description": "Initial setup and implementation of unit tests within the software development lifecycle (GitLab CI, Git) to reach a test coverage of over 50%"
+            "keyword": "Testing Infrastructure",
+            "description": "Established unit testing frameworks with GitLab CI and Git, achieving over 50% test coverage and enhancing software reliability."
           },
           {
-            "description": "Planning and validation of project 'ZeroWork.io'"
+            "keyword": "Project Planning",
+            "description": "Planned and validated the ZeroWork.io project, aligning technical development with strategic business goals."
           }
         ],
         "techstack": [
@@ -214,19 +241,23 @@
       {
         "title": "Web Developer, auteon GmbH (Startup, PoC phase)",
         "tenure": "7/2020 - 3/2021",
-        "description": "Responsible for planning and developing auteons article comparison mechanism via browser automation and supplier APIs",
+        "description": "Planned and developed auteon’s article comparison mechanism, leveraging browser automation and supplier APIs to create a robust, scalable platform in an agile, proof-of-concept startup environment.",
         "tasks": [
           {
-            "description": "Planning, development and integration of software components and APIs in agile product development on strategic and operative level for backend"
+            "keyword": "Backend Development",
+            "description": "Designed and integrated software components and APIs for the backend, driving strategic and operational agile product development to support the article comparison core."
           },
           {
-            "description": "Testing, maintaining and optimizing existing software components to increase robustness, correctness and speed for core product"
+            "keyword": "System Optimization",
+            "description": "Tested, maintained, and optimized existing components to enhance robustness, accuracy, and performance of the core product."
           },
           {
-            "description": "Coordination, support and code review for 3 working students within the automation team"
+            "keyword": "Team Coordination",
+            "description": "Mentored and supported three working students in the automation team, conducting code reviews to ensure high-quality deliverables."
           },
           {
-            "description": "Migration of monolithic legacy code to modular automation core with Clean Code approach"
+            "keyword": "Codebase Modernization",
+            "description": "Migrated monolithic legacy code to a modular automation core, applying Clean Code principles to improve maintainability and scalability."
           }
         ],
         "techstack": [
@@ -243,19 +274,22 @@
       {
         "title": "Technical Account Manager, Hilti AG",
         "tenure": "11/2017 - 1/2020",
-        "description": "Responsible for 700+ industrial clients (SME) regarding consulting and direct sales in defined territory in Berlin area",
+        "description": "Managed a portfolio of over 700 SME industrial clients in the Berlin area, driving consulting and direct sales to achieve strategic revenue and customer loyalty goals for a global leader in construction technology.",
         "tasks": [
           {
-            "description": "Build, care and develop customer relations in accordance to company targets and cost efficient resourcing"
+            "keyword": "Client Relationship Management",
+            "description": "Built and nurtured long-term customer relationships, aligning with company targets while optimizing resource efficiency to enhance client satisfaction and retention."
           },
           {
-            "description": "Product presentation, delivering technical workshops and consulting customers with company's systematic sales approach"
+            "keyword": "Technical Consulting & Workshops",
+            "description": "Delivered compelling product presentations and technical workshops, leveraging Hilti’s systematic sales approach to provide tailored solutions and drive client adoption."
           },
           {
-            "description": "Qualitative and quantitive market research in cooperation with leadership team and technical task force to address market opportunity"
+            "keyword": "Market Research & Strategy",
+            "description": "Collaborated with leadership and technical teams to conduct qualitative and quantitative market research, identifying opportunities to strengthen market positioning and growth."
           },
           {
-            "description": "Admission to Hilti's Top Club Germany by the general management for exceeding strategic company targets for 2 consecutive years based on customer loyalty, revenue growth and execution of companys long-term growth initiatives"
+            "description": "Earned admission to Hilti’s Top Club Germany for two consecutive years, recognized by general management for surpassing strategic targets in customer loyalty, revenue growth, and execution of long-term growth initiatives."
           }
         ]
       }
@@ -289,7 +323,7 @@
   "summaryData": {
     "label": "summarydata",
     "data": {
-      "summary": "Technical Product Manager with an engineering background who likes to build excellent software with great people. My mission is to help purposeful tech companies realize their vision of the future by working pragmatically, thoroughly and business-oriented."
+      "summary": "Generalist with a strong engineering foundation, passionate about delivering innovative software solutions in collaboration with high-performing teams. Committed to empowering mission-driven tech companies to achieve their strategic vision through pragmatic, detail-oriented, and business-focused leadership. Proven expertise in driving product excellence and aligning technical innovation with market needs."
     }
   }
 }

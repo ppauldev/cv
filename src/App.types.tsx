@@ -24,6 +24,7 @@ export type TJob = {
 }
 
 export type TJobTask = {
+  keyword?: string
   description: string
 }
 
