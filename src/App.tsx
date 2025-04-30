@@ -162,10 +162,6 @@ export const Jobs = (): JSX.Element | null => {
 }
 
 export const Job = ({ data }: { data: Types.TJob }): JSX.Element => {
-  const ref = React.useRef(null)
-
-  const [shouldAddPageBreak, setShouldAddPageBreak] = React.useState(false)
-
   const classJobDetails: string = data?.techstack ? styles.JobDetails : styles.JobDetailsFullWidth
 
   const tasks: JSX.Element[] = data.tasks.map((task: Types.TJobTask, index: number): JSX.Element => {
@@ -174,18 +170,8 @@ export const Job = ({ data }: { data: Types.TJob }): JSX.Element => {
     )
   })
 
-  React.useEffect(() => {
-    if (!ref.current) return;
-
-    const body = document.body.getBoundingClientRect()
-    const job = (ref.current as Element).getBoundingClientRect()
-    const offsetTop = job.top - body.top
-
-    //setShouldAddPageBreak(offsetTop < DIN_A4_HEIGHT_IN_PX && offsetTop + job.height >= DIN_A4_HEIGHT_IN_PX)
-  }, [ref])
-
   return (
-    <div className={`${styles.Job} ${shouldAddPageBreak ? styles.JobOnNextPage : ''}`} data-testid="job-wrapper" ref={ref}>
+    <div className={`${styles.Job}`} data-testid="job-wrapper">
       <div className={classJobDetails} data-testid="job-details">
         <span className={styles.bold} data-testid="job-title">{data.title}</span>
         <span className={styles.light} data-testid="job-tenure">{data.tenure}</span>
@@ -220,11 +206,12 @@ export const TechStack = ({ stack }: { stack: string[] | undefined }): JSX.Eleme
 
 export const Info = (): JSX.Element => {
   const [isMultiPage, setIsMultiPage] = React.useState(false)
+  const { language } = React.useContext<IAppContext>(AppContext)
 
   React.useEffect(() => {
     const body = document.body.getBoundingClientRect()
     setIsMultiPage(body.height > DIN_A4_HEIGHT_IN_PX)
-  }, [])
+  }, [language])
 
   return (
     <>

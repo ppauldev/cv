@@ -127,10 +127,10 @@ hr {
 }
 
 .Jobs {
-  align-items: center;
+  align-items: flex-start;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  width: 100%;
 }
 
 .Job {
@@ -138,13 +138,8 @@ hr {
   flex-direction: row;
   font-size: 0.7em;
   justify-content: center;
-  padding-bottom: 12px;
-  /* Increasing this might result in unexpected line break on print */
+  padding-bottom: 8px;
   width: 96%;
-}
-
-.JobOnNextPage {
-  break-before: page;
 }
 
 .JobDetails {
@@ -376,8 +371,40 @@ hr {
     background-color: white;
   }
 
-  .JobOnNextPage {
-    break-before: page;
-    margin-top: 4em;
+  .CVContent {
+    height: auto;
+  }
+
+  .Summary {
+    height: auto;
+    margin-bottom: 12px;
+  }
+
+  .Experience {
+    height: auto;
+  }
+
+  .Jobs {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    height: auto;
+  }
+
+  .Job {
+    padding-bottom: 6px;
+    margin-bottom: 0;
+    height: auto;
+  }
+
+  .Info {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    height: auto;
+  }
+
+  hr {
+    margin-top: 8px;
+    margin-bottom: 8px;
   }
 }
