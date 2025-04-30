@@ -1,0 +1,301 @@
+{
+  "educationData": {
+    "label": "educationdata",
+    "data": [
+      {
+        "degree": "Webentwicklung Bootcamp",
+        "name": "Ironhack",
+        "duration": "2020",
+        "tasks": [
+          {
+            "description": ""
+          },
+          {
+            "description": ""
+          },
+          {
+            "description": ""
+          }
+        ]
+      },
+      {
+        "degree": "M.Sc. Materialwissenschaften",
+        "name": "Universität Jena",
+        "duration": "2014 - 2017",
+        "tasks": [
+          {
+            "description": ""
+          },
+          {
+            "description": ""
+          },
+          {
+            "description": ""
+          }
+        ]
+      },
+      {
+        "degree": "B.Eng. Wirtschaftsingenieurwesen",
+        "name": "Hochschule Trier",
+        "duration": "2009 - 2013",
+        "tasks": [
+          {
+            "description": ""
+          },
+          {
+            "description": ""
+          },
+          {
+            "description": ""
+          }
+        ]
+      }
+    ]
+  },
+  "jobsData": {
+    "label": "jobsdata",
+    "data": [
+      {
+        "title": "Technischer Produktmanager, Beta Systems IAM Software AG",
+        "tenure": "10/2023 - heute",
+        "description": "Verantwortlich für die strategische Produktentwicklung und das Management der 'Garancy'-Produktfamilie, die für umfassendes Identity- und Access-Management in regulierten Branchen eingesetzt wird.",
+        "tasks": [
+          {
+            "description": "Verantwortung für die Produktentwicklung (Scrum, Kanban) von vier kommerziellen Produkten und einem nicht-kommerziellen Produkt (Partner Enablement) mit mehreren funktionsübergreifenden Teams (Design, Frontend-Entwicklung, Backend-Entwicklung, QA, Dokumentation)."
+          },
+          {
+            "description": "Priorisierung des Product Backlogs zur Ausrichtung an strategischen Zielen und Sicherstellung effizienter Entwicklungszyklen."
+          },
+          {
+            "description": "Definition von User Stories, Epics für Release-Planung und Produktanforderungsdokumenten für strategisch wichtige Themen (Identity Provider, Single Sign-on, Multi-Faktor-Authentifizierung, Rollen-Mining)."
+          },
+          {
+            "description": "Planung strategischer Initiativen mit dem STAR-Framework zur Umsetzung der Produktstrategie und -vision."
+          },
+          {
+            "description": "Mitentwicklung neuer Produktstrategie und Vision für die 'Garancy'-Produktfamilie und Marke mit dem Top-Management."
+          },
+          {
+            "description": "Einführung eines neuen Produkts zur Rollen-Analyse, um Partnern und Beratern eine schnellere Implementierung der Garancy-Lösung zu ermöglichen."
+          },
+          {
+            "description": "Prototyping interner Tools & Automatisierungen für QA- und Dokumentationsprozesse (SBOM, FOSS), um Release-Zyklen zu verkürzen."
+          },
+          {
+            "description": "Präsentation der Produkte für Kunden, Partner und interne Stakeholder in Webinaren, Workshops, Events und Meetings."
+          }
+        ],
+        "techstack": [
+          "Docker",
+          "Gitlab CI",
+          "Node.js",
+          "Python",
+          "Cursor",
+          "Claude",
+          "ChatGPT",
+          "Cypress",
+          "Playwright",
+          "Angular",
+          "Next.js",
+          "Keycloak"
+        ]
+      },
+      {
+        "title": "Softwareingenieur, Beta Systems DCI Software AG",
+        "tenure": "9/2022 - 10/2023",
+        "description": "Verantwortlich für die Entwicklung des Produkts 'Beta Admin' für Dokumentenarchivierung, Output-Management und Log-Management.",
+        "tasks": [
+          {
+            "description": "Planung, Entwicklung und Integration von Softwarekomponenten und APIs im Frontend (React.js, Redux, Bootstrap, HTML5, CSS3) im agilen Produktteam."
+          },
+          {
+            "description": "Umsetzung der Produkt-Roadmap in zweiwöchigen Sprints für die Versionen 5.2.0 bis aktuell durch Implementierung von User Stories und Behebung von Bugs."
+          },
+          {
+            "description": "Refactoring des Legacy-Codebase nach Clean-Code-Prinzipien und -Mustern."
+          },
+          {
+            "description": "Einrichtung von Unit-Tests für die Legacy-Codebase (Jest, Jenkins) und Akzeptanztests für verschiedene Betriebssysteme (VirtualBox, Jenkins)."
+          },
+          {
+            "description": "Einrichtung und Refactoring von Jenkins-Pipelines zur Umsetzung der CI/CD-Strategie für Entwicklungs- und Produktionsumgebungen."
+          }
+        ],
+        "techstack": [
+          "React",
+          "Redux",
+          "Bootstrap",
+          "Node.js",
+          "JavaScript (ES6+)",
+          "TypeScript",
+          "Jenkins"
+        ]
+      },
+      {
+        "title": "Full Stack Softwareentwickler, ZeroWork GmbH (Startup, Seed-Phase)",
+        "tenure": "5/2022 - 8/2022",
+        "description": "Verantwortlich für die Planung und Entwicklung des ZeroWork-Marktplatzes und der App.",
+        "tasks": [
+          {
+            "description": "Planung, Entwicklung und Integration von Softwarekomponenten und APIs im Frontend (React.js, Redux, Material UI, HTML5, CSS3) und Backend (Python, Django, PostgreSQL) im agilen Produktteam."
+          },
+          {
+            "description": "Evaluierung, Validierung und Umsetzung der Produkt-Roadmap für den Automatisierungskern (Playwright), um die No-Code-Logik der App und des Marktplatzes zu steuern."
+          },
+          {
+            "description": "Migration des Automatisierungskerns von Python zu TypeScript."
+          },
+          {
+            "description": "Integration von Stripe Payments in das Produkt-Ökosystem (App, Marktplatz, Backend)."
+          },
+          {
+            "description": "Integration eines Remote-Schedulers für App und Marktplatz (AWS, Redis)."
+          },
+          {
+            "description": "Verantwortung und Durchführung des Mac-Release-Prozesses."
+          },
+          {
+            "description": "Qualitätssicherung und Code-Reviews nach Clean-Code-Prinzipien und -Mustern."
+          }
+        ],
+        "techstack": [
+          "React",
+          "Next.js",
+          "Redux",
+          "Material UI",
+          "Node.js",
+          "Electron.js",
+          "JavaScript (ES6+)",
+          "TypeScript",
+          "Python",
+          "Docker",
+          "AWS"
+        ]
+      },
+      {
+        "title": "Softwareingenieur, ZkSystems GmbH (Startup, Seed-Phase)",
+        "tenure": "4/2021 - 4/2022",
+        "description": "Verantwortlich für die Planung und Entwicklung der App (Cross-Plattform) und des Automatisierungskerns für den ZeroWork.io-Launch.",
+        "tasks": [
+          {
+            "description": "Planung, Entwicklung und Integration von Softwarekomponenten und APIs im Frontend (React.js, Redux, Material UI, HTML5, CSS3) im agilen Produktteam."
+          },
+          {
+            "description": "Evaluierung, Validierung und Umsetzung der Produkt-Roadmap für den Automatisierungskern als Greenfield-Projekt (Python, Selenium, RPA Framework), um die No-Code-Logik der App zu steuern."
+          },
+          {
+            "description": "Cross-Plattform-Entwicklung des Kernprodukts (Electron.js, Node.js, Webpack)."
+          },
+          {
+            "description": "Verantwortung und Durchführung des Mac-Release-Prozesses."
+          },
+          {
+            "description": "Integration eines On-Premise- und Cloud-Queue-Management-Systems für die Workflow-Ausführung im Backend und in der App (AWS SQS, Redis, Bull)."
+          },
+          {
+            "description": "Integration von Logging und Analytics im Backend und Frontend der User Journey (AWS S3, Mixpanel)."
+          },
+          {
+            "description": "Qualitätssicherung und Code-Reviews nach Clean-Code-Prinzipien und -Mustern."
+          },
+          {
+            "description": "Initiale Einrichtung und Implementierung von Unit-Tests im Softwareentwicklungszyklus (GitLab CI, Git), um eine Testabdeckung von über 50% zu erreichen."
+          },
+          {
+            "description": "Planung und Validierung des Projekts 'ZeroWork.io'."
+          }
+        ],
+        "techstack": [
+          "React",
+          "Redux",
+          "Material UI",
+          "Node.js",
+          "Electron.js",
+          "JavaScript (ES6+)",
+          "Python",
+          "Selenium",
+          "AWS"
+        ]
+      },
+      {
+        "title": "Webentwickler, auteon GmbH (Startup, PoC-Phase)",
+        "tenure": "7/2020 - 3/2021",
+        "description": "Verantwortlich für die Planung und Entwicklung des Artikelvergleichsmechanismus von auteon mittels Browserautomatisierung und Lieferanten-APIs.",
+        "tasks": [
+          {
+            "description": "Planung, Entwicklung und Integration von Softwarekomponenten und APIs in der agilen Produktentwicklung auf strategischer und operativer Ebene für das Backend."
+          },
+          {
+            "description": "Testen, Warten und Optimieren bestehender Softwarekomponenten zur Steigerung der Robustheit, Korrektheit und Geschwindigkeit des Kernprodukts."
+          },
+          {
+            "description": "Koordination, Unterstützung und Code-Review für 3 Werkstudenten im Automatisierungsteam."
+          },
+          {
+            "description": "Migration des monolithischen Legacy-Codes zu einem modularen Automatisierungskern mit Clean-Code-Ansatz."
+          }
+        ],
+        "techstack": [
+          "Vue",
+          "Node.js",
+          "Electron.js",
+          "JavaScript (ES6+)",
+          "TypeScript",
+          "GraphQL",
+          "Hasura",
+          "PostgreSQL"
+        ]
+      },
+      {
+        "title": "Technischer Account Manager, Hilti AG",
+        "tenure": "11/2017 - 1/2020",
+        "description": "Verantwortlich für 700+ Industriekunden (KMU) hinsichtlich Beratung und Direktvertrieb im definierten Vertriebsgebiet im Raum Berlin.",
+        "tasks": [
+          {
+            "description": "Aufbau, Pflege und Entwicklung von Kundenbeziehungen gemäß Unternehmenszielen und kosteneffizienter Ressourcenplanung."
+          },
+          {
+            "description": "Produktpräsentationen, Durchführung technischer Workshops und Beratung von Kunden mit dem systematischen Vertriebsansatz des Unternehmens."
+          },
+          {
+            "description": "Qualitative und quantitative Marktforschung in Zusammenarbeit mit dem Führungsteam und der technischen Taskforce zur Erschließung von Marktpotenzialen."
+          },
+          {
+            "description": "Aufnahme in den Hilti Top Club Deutschland durch die Geschäftsleitung für das Übertreffen strategischer Unternehmensziele über 2 Jahre in Folge, basierend auf Kundenbindung, Umsatzwachstum und Umsetzung langfristiger Wachstumsinitiativen des Unternehmens."
+          }
+        ]
+      }
+    ]
+  },
+  "languagesData": {
+    "label": "languagesdata",
+    "data": [
+      {
+        "language": "Deutsch",
+        "level": "Muttersprache"
+      },
+      {
+        "language": "Englisch",
+        "level": "C1"
+      }
+    ]
+  },
+  "personData": {
+    "label": "persondata",
+    "data": {
+      "fullname": "Phillip Paul",
+      "role": "",
+      "email": "phillip.paul@magenta.de",
+      "emailsubject": "Hallo Phillip!",
+      "phone": "+49 176 3177 8623",
+      "linkedin": "linkedin.com/in/phillippaul",
+      "github": "github.com/ppauldev"
+    }
+  },
+  "summaryData": {
+    "label": "summarydata",
+    "data": {
+      "summary": "Technischer Produktmanager mit Ingenieurshintergrund, der gerne exzellente Software mit großartigen Menschen baut. Meine Mission ist es, sinnstiftenden Tech-Unternehmen dabei zu helfen, ihre Zukunftsvision zu verwirklichen – durch pragmatisches, gründliches und unternehmerisches Arbeiten."
+    }
+  }
+}

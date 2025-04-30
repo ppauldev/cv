@@ -2,8 +2,13 @@ import { render, screen } from "@testing-library/react"
 import { loadData as _loadData } from "./api/loadData"
 import App, { Contact, CVContent, Education, Experience, Header, Info, Job, Jobs, Language, Languages, Person, School, Summary, TechStack } from "./App"
 import styles from "./App.module.css"
-import * as cvdataJSON from "./cvdata.json"
+import * as cvdataJSON from "./cvdata-en.json"
 import { AppContext } from "./helper/context"
+
+const defaultContext = {
+  language: "en",
+  setLanguage: () => { }
+}
 
 describe("Component: 'App", () => {
   it("should have applied a styling to elements after successful data load", () => {
@@ -49,7 +54,7 @@ describe("Component: 'Header'", () => {
 
 describe("Component: 'Person'", () => {
   it("should have applied styling to elements", () => {
-    const testPersonData = { personData: cvdataJSON.personData }
+    const testPersonData = { ...defaultContext, personData: cvdataJSON.personData }
     render(
       <AppContext.Provider value={testPersonData}>
         <Person />
@@ -64,7 +69,7 @@ describe("Component: 'Person'", () => {
   })
 
   it("should show correct person data", () => {
-    const testPersonData = { personData: cvdataJSON.personData }
+    const testPersonData = { ...defaultContext, personData: cvdataJSON.personData }
     render(
       <AppContext.Provider value={testPersonData}>
         <Person />
@@ -81,7 +86,7 @@ describe("Component: 'Person'", () => {
 
 describe("Component: 'Contact'", () => {
   it("should have applied styling to elements", () => {
-    const testPersonData = { personData: cvdataJSON.personData }
+    const testPersonData = { ...defaultContext, personData: cvdataJSON.personData }
     render(
       <AppContext.Provider value={testPersonData}>
         <Contact />
@@ -96,7 +101,7 @@ describe("Component: 'Contact'", () => {
   })
 
   it("should show correct contact data", () => {
-    const testPersonData = { personData: cvdataJSON.personData }
+    const testPersonData = { ...defaultContext, personData: cvdataJSON.personData }
     render(
       <AppContext.Provider value={testPersonData}>
         <Contact />
@@ -113,7 +118,7 @@ describe("Component: 'Contact'", () => {
   })
 
   it("should have correct contact links", () => {
-    const testPersonData = { personData: cvdataJSON.personData }
+    const testPersonData = { ...defaultContext, personData: cvdataJSON.personData }
     render(
       <AppContext.Provider value={testPersonData}>
         <Contact />
@@ -132,7 +137,7 @@ describe("Component: 'Contact'", () => {
 
 describe("Component: 'Summary'", () => {
   it("should show the section heading text as h4", () => {
-    const testSummaryData = { summaryData: cvdataJSON.summaryData }
+    const testSummaryData = { ...defaultContext, summaryData: cvdataJSON.summaryData }
     render(
       <AppContext.Provider value={testSummaryData}>
         <Summary />
@@ -145,7 +150,7 @@ describe("Component: 'Summary'", () => {
   })
 
   it("should show the headers thematic break (hr)", () => {
-    const testSummaryData = { summaryData: cvdataJSON.summaryData }
+    const testSummaryData = { ...defaultContext, summaryData: cvdataJSON.summaryData }
     render(
       <AppContext.Provider value={testSummaryData}>
         <Summary />
@@ -158,7 +163,7 @@ describe("Component: 'Summary'", () => {
   })
 
   it("should have applied styling to elements", () => {
-    const testSummaryData = { summaryData: cvdataJSON.summaryData }
+    const testSummaryData = { ...defaultContext, summaryData: cvdataJSON.summaryData }
     render(
       <AppContext.Provider value={testSummaryData}>
         <Summary />
@@ -171,7 +176,7 @@ describe("Component: 'Summary'", () => {
   })
 
   it("should show correct summary data", () => {
-    const testSummaryData = { summaryData: cvdataJSON.summaryData }
+    const testSummaryData = { ...defaultContext, summaryData: cvdataJSON.summaryData }
     render(
       <AppContext.Provider value={testSummaryData}>
         <Summary />
@@ -186,7 +191,7 @@ describe("Component: 'Summary'", () => {
 
 describe("Component: 'Experience'", () => {
   it("should show the section heading text as h4", () => {
-    const testJobsData = { jobsData: cvdataJSON.jobsData }
+    const testJobsData = { ...defaultContext, jobsData: cvdataJSON.jobsData }
     render(
       <AppContext.Provider value={testJobsData}>
         <Experience />
@@ -199,7 +204,7 @@ describe("Component: 'Experience'", () => {
   })
 
   it("should show the headers thematic break (hr)", () => {
-    const testJobsData = { jobsData: cvdataJSON.jobsData }
+    const testJobsData = { ...defaultContext, jobsData: cvdataJSON.jobsData }
     render(
       <AppContext.Provider value={testJobsData}>
         <Experience />
@@ -212,7 +217,7 @@ describe("Component: 'Experience'", () => {
   })
 
   it("should have applied styling to elements", () => {
-    const testJobsData = { jobsData: cvdataJSON.jobsData }
+    const testJobsData = { ...defaultContext, jobsData: cvdataJSON.jobsData }
     render(
       <AppContext.Provider value={testJobsData}>
         <Experience />
@@ -227,7 +232,7 @@ describe("Component: 'Experience'", () => {
 
 describe("Component: 'Jobs'", () => {
   it("should have applied styling to element", () => {
-    const testJobsData = { jobsData: cvdataJSON.jobsData }
+    const testJobsData = { ...defaultContext, jobsData: cvdataJSON.jobsData }
     render(
       <AppContext.Provider value={testJobsData}>
         <Jobs />
@@ -240,7 +245,7 @@ describe("Component: 'Jobs'", () => {
   })
 
   it("should render correct amount of jobs data", () => {
-    const testJobsData = { jobsData: cvdataJSON.jobsData }
+    const testJobsData = { ...defaultContext, jobsData: cvdataJSON.jobsData }
     render(
       <AppContext.Provider value={testJobsData}>
         <Jobs />
@@ -327,7 +332,7 @@ describe("Component: 'Info'", () => {
 
 describe("Component: 'Education'", () => {
   it("should show the section heading text as h5", () => {
-    const testEducationData = { educationData: cvdataJSON.educationData }
+    const testEducationData = { ...defaultContext, educationData: cvdataJSON.educationData }
     render(
       <AppContext.Provider value={testEducationData}>
         <Education />
@@ -340,7 +345,7 @@ describe("Component: 'Education'", () => {
   })
 
   it("should show the headers thematic break (hr)", () => {
-    const testEducationData = { educationData: cvdataJSON.educationData }
+    const testEducationData = { ...defaultContext, educationData: cvdataJSON.educationData }
     render(
       <AppContext.Provider value={testEducationData}>
         <Education />
@@ -353,7 +358,7 @@ describe("Component: 'Education'", () => {
   })
 
   it("should have applied styling to elements", () => {
-    const testEducationData = { educationData: cvdataJSON.educationData }
+    const testEducationData = { ...defaultContext, educationData: cvdataJSON.educationData }
     render(
       <AppContext.Provider value={testEducationData}>
         <Education />
@@ -368,7 +373,7 @@ describe("Component: 'Education'", () => {
   })
 
   it("should render correct amount of education data", () => {
-    const testEducationData = { educationData: cvdataJSON.educationData }
+    const testEducationData = { ...defaultContext, educationData: cvdataJSON.educationData }
     render(
       <AppContext.Provider value={testEducationData}>
         <Education />
@@ -409,7 +414,7 @@ describe("Component: 'School'", () => {
 
 describe("Component: 'Languages'", () => {
   it("should show the section heading text as h5", () => {
-    const testLanguagesData = { languagesData: cvdataJSON.languagesData }
+    const testLanguagesData = { ...defaultContext, languagesData: cvdataJSON.languagesData }
     render(
       <AppContext.Provider value={testLanguagesData}>
         <Languages />
@@ -422,7 +427,7 @@ describe("Component: 'Languages'", () => {
   })
 
   it("should show the headers thematic break (hr)", () => {
-    const testLanguagesData = { languagesData: cvdataJSON.languagesData }
+    const testLanguagesData = { ...defaultContext, languagesData: cvdataJSON.languagesData }
     render(
       <AppContext.Provider value={testLanguagesData}>
         <Languages />
@@ -435,7 +440,7 @@ describe("Component: 'Languages'", () => {
   })
 
   it("should have applied styling to elements", () => {
-    const testLanguagesData = { languagesData: cvdataJSON.languagesData }
+    const testLanguagesData = { ...defaultContext, languagesData: cvdataJSON.languagesData }
     render(
       <AppContext.Provider value={testLanguagesData}>
         <Languages />
@@ -450,7 +455,7 @@ describe("Component: 'Languages'", () => {
   })
 
   it("should render correct amount of language data", () => {
-    const testLanguagesData = { languagesData: cvdataJSON.languagesData }
+    const testLanguagesData = { ...defaultContext, languagesData: cvdataJSON.languagesData }
     render(
       <AppContext.Provider value={testLanguagesData}>
         <Languages />

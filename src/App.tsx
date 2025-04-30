@@ -1,5 +1,5 @@
 import * as React from "react"
-import { AppContext } from "./helper/context"
+import { AppContext, IAppContext } from "./helper/context"
 import { isEmptyObject } from "./helper/utils"
 import { GitHubIcon, LoadingSpinner, LinkedInIcon, MailIcon, PhoneIcon } from "./icons/Icons"
 import styles from "./App.module.css"
@@ -7,11 +7,27 @@ import * as Types from "./App.types"
 
 const DIN_A4_HEIGHT_IN_PX = 1118.74
 
-const App = ({ loadData }: { loadData: () => Types.TCVData | Types.TCVDataInitial }): JSX.Element => {
+const SECTION_LABELS: Record<string, { summary: string; experience: string; education: string; languages: string }> = {
+  en: {
+    summary: "Profile Summary",
+    experience: "Experience",
+    education: "Education",
+    languages: "Languages",
+  },
+  de: {
+    summary: "Zusammenfassung",
+    experience: "Berufserfahrung",
+    education: "Ausbildung",
+    languages: "Sprachen",
+  },
+}
+
+const App = ({ loadData }: { loadData: (language: string) => Types.TCVData | Types.TCVDataInitial }): JSX.Element => {
   const [cvData, setCvData] = React.useState<Types.TCVData | Types.TCVDataInitial>({})
+  const [language, setLanguage] = React.useState<string>("en")
 
   React.useEffect(() => {
-    const data: Types.TCVData | Types.TCVDataInitial = loadData() // Dependency injection to test conditional loading
+    const data: Types.TCVData | Types.TCVDataInitial = loadData(language)
 
     setCvData((initial) => (
       {
@@ -19,10 +35,10 @@ const App = ({ loadData }: { loadData: () => Types.TCVData | Types.TCVDataInitia
         ...data
       })
     )
-  }, [loadData])
+  }, [loadData, language])
 
   return (
-    <AppContext.Provider value={cvData}>
+    <AppContext.Provider value={{ ...cvData, language, setLanguage }}>
       <div className={styles.App} data-testid="app">
         <div className={styles.CVWrapper} data-testid="cv-wrapper">
           {!isEmptyObject(cvData) ? <CVContent /> : <LoadingSpinner />}
@@ -53,14 +69,18 @@ export const Header = (): JSX.Element => {
 }
 
 export const Person = (): JSX.Element | null => {
-  const { personData } = React.useContext<Types.TCVData | { personData?: Types.TPersonData }>(AppContext)
+  const { personData, language, setLanguage } = React.useContext<IAppContext>(AppContext)
 
   if (!personData || !("data" in personData)) return null
+
+  const toggleLanguage = () => {
+    setLanguage(language === "en" ? "de" : "en")
+  }
 
   return (
     <div className={styles.Person} data-testid="person-wrapper">
       <div className={styles.PersonDetails} data-testid="person-details">
-        <h2>{personData.data.fullname}</h2>
+        <h2 onClick={toggleLanguage} style={{ cursor: "pointer" }}>{personData.data.fullname}</h2>
         <h3>{personData.data.role}</h3>
       </div>
     </div>
@@ -68,7 +88,7 @@ export const Person = (): JSX.Element | null => {
 }
 
 export const Contact = (): JSX.Element | null => {
-  const { personData } = React.useContext<Types.TCVData | { personData?: Types.TPersonData }>(AppContext)
+  const { personData } = React.useContext<IAppContext>(AppContext)
 
   if (!personData || !("data" in personData)) return null
 
@@ -103,13 +123,13 @@ export const Contact = (): JSX.Element | null => {
 }
 
 export const Summary = (): JSX.Element | null => {
-  const { summaryData } = React.useContext<Types.TCVData | { summaryData?: Types.TSummaryData }>(AppContext)
+  const { summaryData, language } = React.useContext<IAppContext>(AppContext)
 
   if (!summaryData || !("data" in summaryData)) return null
 
   return (
     <section className={styles.Summary} data-testid="summary-section">
-      <h4>Profile Summary</h4>
+      <h4>{SECTION_LABELS[language]?.summary ?? SECTION_LABELS["en"].summary}</h4>
       <hr />
       <p data-testid="summary-text">{summaryData.data.summary}</p>
     </section>
@@ -117,9 +137,10 @@ export const Summary = (): JSX.Element | null => {
 }
 
 export const Experience = (): JSX.Element => {
+  const { language } = React.useContext<IAppContext>(AppContext)
   return (
     <section className={styles.Experience} data-testid="experience-section">
-      <h4>Experience</h4>
+      <h4>{SECTION_LABELS[language]?.experience ?? SECTION_LABELS["en"].experience}</h4>
       <hr />
       <Jobs />
     </section>
@@ -127,7 +148,7 @@ export const Experience = (): JSX.Element => {
 }
 
 export const Jobs = (): JSX.Element | null => {
-  const { jobsData } = React.useContext<Types.TCVData | { jobsData?: Types.TJobsData }>(AppContext)
+  const { jobsData } = React.useContext<IAppContext>(AppContext)
 
   if (!jobsData || !("data" in jobsData)) return null
 
@@ -160,7 +181,7 @@ export const Job = ({ data }: { data: Types.TJob }): JSX.Element => {
     const job = (ref.current as Element).getBoundingClientRect()
     const offsetTop = job.top - body.top
 
-    setShouldAddPageBreak(offsetTop < DIN_A4_HEIGHT_IN_PX && offsetTop + job.height >= DIN_A4_HEIGHT_IN_PX)
+    //setShouldAddPageBreak(offsetTop < DIN_A4_HEIGHT_IN_PX && offsetTop + job.height >= DIN_A4_HEIGHT_IN_PX)
   }, [ref])
 
   return (
@@ -227,7 +248,7 @@ export const Info = (): JSX.Element => {
 }
 
 export const Education = (): JSX.Element | null => {
-  const { educationData } = React.useContext<Types.TCVData | { educationData?: Types.TEducationData }>(AppContext)
+  const { educationData, language } = React.useContext<IAppContext>(AppContext)
 
   if (!educationData || !("data" in educationData)) return null
 
@@ -237,7 +258,7 @@ export const Education = (): JSX.Element | null => {
 
   return (
     <section className={styles.Education} data-testid="education-section">
-      <h5>Education</h5>
+      <h5>{SECTION_LABELS[language]?.education ?? SECTION_LABELS["en"].education}</h5>
       <hr />
       <div className={styles.Schools} data-testid="schools">{schools}</div>
     </section>
@@ -245,7 +266,7 @@ export const Education = (): JSX.Element | null => {
 }
 
 export const EducationMultiPage = (): JSX.Element | null => {
-  const { educationData } = React.useContext<Types.TCVData | { educationData?: Types.TEducationData }>(AppContext)
+  const { educationData, language } = React.useContext<IAppContext>(AppContext)
 
   if (!educationData || !("data" in educationData)) return null
 
@@ -255,7 +276,7 @@ export const EducationMultiPage = (): JSX.Element | null => {
 
   return (
     <section className={styles.EducationMultiPage} data-testid="education-multipage-section">
-      <h5>Education</h5>
+      <h5>{SECTION_LABELS[language]?.education ?? SECTION_LABELS["en"].education}</h5>
       <hr />
       <div className={styles.SchoolsMultiPage} data-testid="schools">{schools}</div>
     </section>
@@ -289,17 +310,17 @@ export const SchoolMultiPage = ({ data }: { data: Types.TSchool }): JSX.Element 
 }
 
 export const Languages = (): JSX.Element | null => {
-  const { languagesData } = React.useContext<Types.TCVData | { languagesData?: Types.TLanguagesData }>(AppContext)
+  const { languagesData, language } = React.useContext<IAppContext>(AppContext)
 
   if (!languagesData || !("data" in languagesData)) return null
 
-  const languages: JSX.Element[] = languagesData.data.map((language: Types.TLanguage, index: number) => {
-    return <Language data={language} key={index} />
+  const languages: JSX.Element[] = languagesData.data.map((languageObj: Types.TLanguage, index: number) => {
+    return <Language data={languageObj} key={index} />
   })
 
   return (
     <section className={styles.Languages} data-testid="languages-section">
-      <h5>Languages</h5>
+      <h5>{SECTION_LABELS[language]?.languages ?? SECTION_LABELS["en"].languages}</h5>
       <hr />
       <div className={styles.LanguagesDetails} data-testid="languages-details">{languages}</div>
     </section>
@@ -307,17 +328,17 @@ export const Languages = (): JSX.Element | null => {
 }
 
 export const LanguagesMultiPage = (): JSX.Element | null => {
-  const { languagesData } = React.useContext<Types.TCVData | { languagesData?: Types.TLanguagesData }>(AppContext)
+  const { languagesData, language } = React.useContext<IAppContext>(AppContext)
 
   if (!languagesData || !("data" in languagesData)) return null
 
-  const languages: JSX.Element[] = languagesData.data.map((language: Types.TLanguage, index: number) => {
-    return <LanguageMultiPage data={language} key={index} />
+  const languages: JSX.Element[] = languagesData.data.map((languageObj: Types.TLanguage, index: number) => {
+    return <LanguageMultiPage data={languageObj} key={index} />
   })
 
   return (
     <section className={styles.LanguagesMultiPage} data-testid="languages-section">
-      <h5>Languages</h5>
+      <h5>{SECTION_LABELS[language]?.languages ?? SECTION_LABELS["en"].languages}</h5>
       <hr />
       <div className={styles.LanguagesDetails} data-testid="languages-details">{languages}</div>
     </section>
